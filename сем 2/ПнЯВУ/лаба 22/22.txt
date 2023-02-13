@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+double z1(double x)
+{
+	if (x < 3)
+	{
+		cout << "wrong x" << endl;
+		return 0;
+	}
+	else
+	{
+		return ((x+1)*sqrt(x*x-9)+x*(x+2)-3)/((x-1)*sqrt(x * x - 9)+x*x-2*x-3);
+	}
+}
+
+double z2(double x)
+{
+	if (x <= 3)
+	{
+		cout << "wrong x" << endl;
+		return 0;
+	}
+	else
+	{
+		return sqrt((x + 3) / (x - 3));
+	}
+}
+
+int main()
+{
+	double x;
+	cin >> x;
+	cout << "z1 = " << z1(x) << endl;
+	cout << "z2 = " << z2(x) << endl;
+}

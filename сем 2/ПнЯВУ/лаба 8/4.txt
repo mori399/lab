@@ -1,0 +1,21 @@
+#include <iostream>
+
+int gcd(int m, int n)
+{
+    if (m < n)
+        return gcd(n, m);
+    else if (m == 0)
+        return n;
+    else if (m > n)
+       return gcd(m - n, n);
+    return 1;
+}
+
+int main()
+{
+    int m, n;
+    std::cin >> m >> n;
+    int result = gcd(m,n);
+    std::cout << result << std::endl;
+    return 0;
+}

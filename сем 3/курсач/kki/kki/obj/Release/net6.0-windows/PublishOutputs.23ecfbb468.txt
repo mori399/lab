@@ -1,0 +1,5 @@
+D:\angliskaipapka\kki.exe
+D:\angliskaipapka\kki.dll
+D:\angliskaipapka\kki.deps.json
+D:\angliskaipapka\kki.runtimeconfig.json
+D:\angliskaipapka\kki.pdb

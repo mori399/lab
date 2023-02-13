@@ -1,0 +1,5 @@
+C:\Users\morim\Desktop\папка\lab_5.exe
+C:\Users\morim\Desktop\папка\lab_5.dll
+C:\Users\morim\Desktop\папка\lab_5.deps.json
+C:\Users\morim\Desktop\папка\lab_5.runtimeconfig.json
+C:\Users\morim\Desktop\папка\lab_5.pdb

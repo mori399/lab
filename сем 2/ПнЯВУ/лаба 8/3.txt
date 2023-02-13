@@ -1,0 +1,16 @@
+#include <iostream>
+
+int Posled(int n)
+{
+    if (n > 1)
+        return n - Posled(Posled(n - 1));
+    return 1;
+}
+
+int main()
+{
+    int n = 10;
+    int result = Posled(n);
+    std::cout << result << std::endl;
+    return 0;
+}

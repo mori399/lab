@@ -1,0 +1,15 @@
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\prikolna.exe
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\prikolna.deps.json
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\prikolna.runtimeconfig.json
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\prikolna.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\prikolna.pdb
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.csproj.AssemblyReference.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.AssemblyInfoInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.AssemblyInfo.cs
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.csproj.CoreCompileInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\refint\prikolna.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.pdb
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\prikolna.genruntimeconfig.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\ref\prikolna.dll

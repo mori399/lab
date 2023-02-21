@@ -1,0 +1,15 @@
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\hfmn.exe
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\hfmn.deps.json
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\hfmn.runtimeconfig.json
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\hfmn.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\bin\Debug\net6.0\hfmn.pdb
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.csproj.AssemblyReference.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.AssemblyInfoInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.AssemblyInfo.cs
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.csproj.CoreCompileInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\refint\hfmn.dll
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.pdb
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\hfmn.genruntimeconfig.cache
+C:\Users\morim\Desktop\Для пугу\ти\1\prikolna\prikolna\obj\Debug\net6.0\ref\hfmn.dll

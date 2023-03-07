@@ -1,65 +1,20 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
+namespace lab1;
 
-class Human
-{
-    public string Name { get; set; }
-    public int num { get; set; }
-    public int Year { get; set; }
-    protected void addName()
-    {
-        Console.Write("Введите имя сотрудника: ");
-        Name = Console.ReadLine();
-    }
-
-    protected void addnum()
-    {
-        Console.Write("Введите номер сотрудника: ");
-        num = Convert.ToInt32(Console.ReadLine());
-    }
-
-    protected void addYear()
-    {
-        Console.Write("Введите год начала работы: ");
-        Year = Convert.ToInt32(Console.ReadLine());
-    }
-
-   
-}
-
-class Department : Human
-{
-    public void NewEployment()
-    {
-        addName();
-        addnum();
-        addYear();
-
-    }
-    public void Show(int i)
-    {
-        Console.Write(++i + ".");
-        Console.Write("Имя - " + Name + "\n");
-        Console.Write("Номер - " + num + "\n");
-        Console.Write("год старта - " + Year + "\n");
-        Console.Write("--------------------\n");
-    }
-    public void Show()
-    {
-        Console.Write("Имя - " + Name + "\n");
-        Console.Write("Номер - " + num + "\n");
-        Console.Write("год старта - " + Year + "\n");
-    }
-
-}
 class Program
 {
     static void Main()
     {
-        Department[,] Depart = new Department[3, 10];
-        int n, number = 0, dep;
-        Human[] Eployment = new Human[3];
-        Console.WriteLine("Что делаем?\n1 - Добавить сотрудника\n2 - Просмотреть всех сотрудников\n");
+        int n, number = 0;
+        var dep = 0;
+        string name;
+        bool flag;
+        Department department = new Department();
+        Human Eployment = new Human();
+        department.Initializations();
+        Console.WriteLine("Что делаем?\n1 - Добавить сотрудника\n2 - Удалить сотрудника\n3 - Просмотреть сотрудников\n");
         while (true)
         {
             n = Convert.ToInt32(Console.ReadLine());
@@ -68,28 +23,43 @@ class Program
                 case 1:
                     Console.WriteLine("В какой отдел добавить сотрудника?");
                     dep = Convert.ToInt32(Console.ReadLine());
-                    Depart[dep,number] = new Department();
-                    Depart[dep,number].NewEployment();
+                    Eployment.NewEployment();
+                    department.AddNewEployment(dep,Eployment);
                     number++;
                     break;
                 case 2:
-                    Console.WriteLine("В какой отдел добавить сотрудника?");
+                    Console.WriteLine("Из какого отдела удалить сотрудника?");
                     dep = Convert.ToInt32(Console.ReadLine());
-                    for (int i = 0; i < number; i++)
-                        Depart[dep,i].Show(i);                          //как проверить количество сотрудников во разных отделах?
-                    break;
-                case 3:
-                    Console.WriteLine("Введите номер удаляемого сотрудника");
-                    int del;
-                    bool StartDel = false;
-                    del = Convert.ToInt32(Console.ReadLine());
-                    for (int i = 0; 0 < number; i++)
+                    Console.WriteLine("Имя удаляемого сотрудника:\n");
+                    name = Console.ReadLine();
+                    flag = department.DeleteEployment(dep, name);
+                    if (flag)
                     {
-                        if(Eployment[i].num == del) { StartDel = true; }
+                        Console.WriteLine("Успешно"); 
+                    }else
+                    {
+                        Console.WriteLine("Неверное имя");
                     }
                     break;
+                case 3:
+                    Console.WriteLine("Какой отдел вывести?");
+                    dep = Convert.ToInt32(Console.ReadLine());
+                    department.ShowEployment(dep);
+                    break;
                 case 4:
-
+                    Console.WriteLine("Из какого отдела редактируемый сотрудник?");
+                    dep = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Имя редактируемого сотрудника:\n");
+                    name = Console.ReadLine();
+                    flag = department.EditingEployment(dep, name);
+                    if (flag)
+                    {
+                        Console.WriteLine("Успешно");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Неверное имя");
+                    }
                     break;
                 case 5:
 

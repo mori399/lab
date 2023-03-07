@@ -1,0 +1,15 @@
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\bin\Debug\net6.0\lab_2.exe
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\bin\Debug\net6.0\lab_2.deps.json
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\bin\Debug\net6.0\lab_2.runtimeconfig.json
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\bin\Debug\net6.0\lab_2.dll
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\bin\Debug\net6.0\lab_2.pdb
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.csproj.AssemblyReference.cache
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.AssemblyInfoInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.AssemblyInfo.cs
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.csproj.CoreCompileInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.dll
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\refint\lab_2.dll
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.pdb
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\lab_2.genruntimeconfig.cache
+C:\Users\morim\Desktop\Для пугу\ти\лаба 2\lab_2\lab_2\obj\Debug\net6.0\ref\lab_2.dll

@@ -1,0 +1,30 @@
+<html>
+<body>
+    <table>
+        <script language="JavaScript">
+            document.write("<tr><td>&nbsp;</td>");
+            for (i = 1; i < 10; i++) document.write("<td>" + i + "&nbsp;</td>");
+            document.write("</tr>");
+            for (i = 1; i < 10; i++) {
+                document.write("<tr><td>" + i + "&nbsp;</td>");
+                for (j = 1; j < 10; j++) {
+                    color = Math.round(255.0 * Math.random());
+                    r = color.toString(16);
+                    color = Math.round(255.0 * Math.random());
+                    g = color.toString(16);
+                    color = Math.round(255.0 * Math.random());
+                    b = color.toString(16);
+                    color = r + g + b;
+                    document.write('<td bgcolor= #' + color + '>' + (color) + '&nbsp;</td>');
+                }
+                document.write("</tr>");
+
+                color = Math.round(255.0 * Math.random());
+
+                r = color.toString(16);
+
+            }
+        </script>
+    </table>
+</body>
+</html>

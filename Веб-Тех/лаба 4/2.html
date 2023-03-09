@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <p>hello</p>
+    <p>world</p>
+    <p>text</p>
+
+    <script type="text/javascript">
+        x = document.getElementsByTagName("p");
+        for (i = 0; i < x.length; i++) {
+            document.write(x[i].innerHTML);
+            document.write("<br />");
+        }
+    </script>
+
+    <p id="p1">Hello World!</p>
+
+    <script type="text/javascript">
+        document.getElementById("p1").innerHTML = "New text!";</script>
+
+
+    <div id="c" style="color:blue">Вы выбрали цвет текста: черный</div>
+    <script language="JavaScript">
+        var tcolor = prompt("Выберите цвет текста: red, blue, green, yellow, black", "black");
+        document.getElementById("c").innerHTML = "Вы выбрали цвет текста: " + tcolor;
+        document.getElementById("c").style.color = tcolor;
+    </script>
+
+
+</body>
+
+</html>

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 
 namespace lab1
 {
@@ -13,14 +8,15 @@ namespace lab1
         {
 
         }
+        //конструктор копирования
         public Human(Human human)
         {
-            this.StartYear = human.StartYear;
-            this.Name = human.Name;
-            this.Surename = human.Surename;
-            this.Day = human.Day;
-            this.Month = human.Month;
-            this.Year = human.Year;
+            StartYear = human.StartYear;
+            Name = human.Name;
+            Surename = human.Surename;
+            Day = human.Day;
+            Month = human.Month;
+            Year = human.Year;
         }
 
         private string Name;
@@ -57,13 +53,62 @@ namespace lab1
 
         public void AddHumanName()
         {
-            Console.Write("Введите имя сотрудника: ");
-            Name = Console.ReadLine();
+            Console.Write("Введите имя сотрудника: ");      
+            bool flag = true;
+            while (true) {
+                string str = Console.ReadLine();
+                flag = true;
+                foreach (char c in str)
+                {
+                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
+                    {
+                    }
+                    else
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag)
+                {
+                    Name = str;
+                    break;
+                }
+                else
+                {
+                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                }
+            }
         }
         public void AddHumanSurename()
         {
             Console.Write("Введите фамилию сотрудника: ");
-            Surename = Console.ReadLine();
+            bool flag = true;
+            while (true)
+            {
+                string str = Console.ReadLine();
+                flag = true;
+                foreach (char c in str)
+                {
+                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
+                    {
+                    }
+                    else
+                    {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag)
+                {
+                    Surename = str;
+                    break;
+                }
+                else
+                {
+                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                }
+            }
         }
 
         public void AddHumanBirthday()
@@ -72,7 +117,7 @@ namespace lab1
             Console.Write("Введите день(0 - 31): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int day) == true && day <= 31 && day >= 0)
+                if (int.TryParse(Console.ReadLine(), out int day) == true && day <= 31 && day > 0)
                 {
                     Day = day;
                     break;
@@ -85,7 +130,7 @@ namespace lab1
             Console.Write("Введите месяц(0 - 12): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int month) == true && month <= 12 && month >= 0)
+                if (int.TryParse(Console.ReadLine(), out int month) == true && month <= 12 && month > 0)
                 {
                     Month = month;
                     break;
@@ -139,7 +184,7 @@ namespace lab1
         {
             Console.Write("Имя и Фамилия - " + Name + " " + Surename + "\n");
             Console.Write("День рождения - " + Day + "." + Month + "." + Year + "\n");
-            Console.Write("год старта - " + StartYear + "\n\n");
+            Console.Write("Год начала работы - " + StartYear + "\n\n");
         }
 
     }

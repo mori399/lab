@@ -1,4 +1,6 @@
-﻿namespace lab1
+﻿using System.Runtime.Intrinsics.Arm;
+
+namespace lab1
 {
     class Department
     {
@@ -17,19 +19,54 @@
         public bool DeleteEployment(int num, string name)
         {
             int count = 0;
-            bool flag = true;
+            bool flag = false, MoreOne = false;
+
+            //for (int i = 0; i < filmList.Count; i++)
+            //{
+            //    if (filmList[i].GetName().IndexOf(Name) != -1)
+            //    {
+            //        Console.Write(i + ".");
+            //        filmList[i].SeeInfo();
+            //    }
+            //}
+
             for (int i = 0; i < depart[num].Count; i++)
             {
-                if (depart[num][i].GetName() == name)
+                if (depart[num][i].GetSurename().IndexOf(name) != -1)
                 {
+                    Console.Write(i + ".");
+                    depart[num][i].Show();
                     count = i;
-                    flag = false;
+                    if (flag)
+                    {
+                        MoreOne = true;
+                    }
+                    flag = true;
                 }
             }
-            if (flag) return false;
+            if (MoreOne)
+            {
+                Console.Write("Сотрудника под каким номером нужно удалить?\n");
+                while (true)
+                {
+                   if (int.TryParse(Console.ReadLine(), out int i) == true)
+                    {
+                        depart[num].RemoveAt(i);
+                        return true;
+                    }
+                   else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                }
 
-            depart[num].RemoveAt(count);
-            return true;
+            }
+            else
+            {
+                if (flag)
+                {
+                    depart[num].RemoveAt(count);
+                    return true;
+                }
+                else return false;
+            }
         }
         public void ShowEployment()
         {
@@ -39,16 +76,18 @@
                 Console.WriteLine(++num + "-------------------------------");
                 for (int j = 0; j < depart[i].Count; j++)
                 {
-                    depart[i][j].Show();
+                     depart[i][j].Show();
                 }
+                if (depart[i].Count == 0) Console.WriteLine("Тут пусто\n");
             }
         }
         public void ShowEployment(int num)
         {
                 for (int i = 0; i < depart[num].Count; i++)
                 {
-                    depart[num][i].Show();
+                  depart[num][i].Show();
                 }
+            if (depart[num].Count == 0) Console.WriteLine("Тут пусто\n");
         }
         public bool EditingEployment(int num, string name)
         {
@@ -56,7 +95,7 @@
             bool flag = true;
             for (int i = 0; i < depart[num].Count; i++)
             {
-                if (depart[num][i].GetName() == name)
+                if (depart[num][i].GetSurename() == name)
                 {
                     count = i;
                     flag = false;

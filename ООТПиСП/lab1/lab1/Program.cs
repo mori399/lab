@@ -5,7 +5,7 @@ class Program
     static void Main()
     {
         int number = 0, dep = 0;
-        string name;
+        string surename;
         bool flag;
         Department department = new Department();
         Human Eployment = new Human();
@@ -41,9 +41,9 @@ class Program
                         if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.WriteLine("Имя удаляемого сотрудника:\n");
-                            name = Console.ReadLine();
-                            flag = department.DeleteEployment(dep, name);
+                            Console.WriteLine("Фамилия удаляемого сотрудника:");
+                            surename = Console.ReadLine();
+                            flag = department.DeleteEployment(dep, surename);
                             if (flag)
                             {
                                 Console.WriteLine("Успешно");
@@ -51,7 +51,7 @@ class Program
                             }
                             else
                             {
-                                Console.WriteLine("Неверное имя");
+                                Console.WriteLine("Неверная фамилия");
                                 break;
                             }
                         }
@@ -95,9 +95,9 @@ class Program
                         if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.WriteLine("Имя редактируемого сотрудника:\n");
-                            name = Console.ReadLine();
-                            flag = department.EditingEployment(dep, name);
+                            Console.Write("Фамилия редактируемого сотрудника:");
+                            surename = Console.ReadLine();
+                            flag = department.EditingEployment(dep, surename);
                             if (flag)
                             {
                                 Console.WriteLine("Успешно");
@@ -105,7 +105,7 @@ class Program
                             }
                             else
                             {
-                                Console.WriteLine("Неверное имя");
+                                Console.WriteLine("Неверная фамилия");
                             }
 
                         }

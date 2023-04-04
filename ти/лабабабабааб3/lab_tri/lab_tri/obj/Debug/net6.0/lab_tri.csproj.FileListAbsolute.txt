@@ -1,0 +1,15 @@
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\bin\Debug\net6.0\lab_tri.exe
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\bin\Debug\net6.0\lab_tri.deps.json
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\bin\Debug\net6.0\lab_tri.runtimeconfig.json
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\bin\Debug\net6.0\lab_tri.dll
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\bin\Debug\net6.0\lab_tri.pdb
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.csproj.AssemblyReference.cache
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.AssemblyInfoInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.AssemblyInfo.cs
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.csproj.CoreCompileInputs.cache
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.dll
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\refint\lab_tri.dll
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.pdb
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\lab_tri.genruntimeconfig.cache
+C:\Users\morim\Desktop\Для пугу\ти\лабабабабааб3\lab_tri\lab_tri\obj\Debug\net6.0\ref\lab_tri.dll

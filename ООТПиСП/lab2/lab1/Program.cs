@@ -1,162 +1,171 @@
-﻿using System.Security.Cryptography;
-
-namespace lab1;
+﻿namespace lab1;
 
 class Program
 {
     static void Main()
     {
         int dep = 0;
-        string surename;
         bool flag;
         Department department = new Department();
         Human Eployment = new Human();
-        department.Initializations();
         while (true)
         {
-            Console.WriteLine("Что делаем?\n1 - Добавить сотрудника\n2 - Удалить сотрудника\n3 - Просмотреть сотрудников\n4 - Редактировать сотрудника\n5 - Добавить сотрудника через конструктор с параметрами\n6 - Копировать сотрудника");
+            Console.WriteLine("Что делаем?\n" +
+                "1 - Добавить сотрудника\n" +
+                "2 - Удалить сотрудника\n" +
+                "3 - Просмотреть сотрудников\n" +
+                "4 - Редактировать сотрудника\n" +
+                "5 - Добавить сотрудника через конструктор с параметрами\n" +
+                "6 - Копировать сотрудника");
             int.TryParse(Console.ReadLine(), out int n);
             switch (n)
             {
                 case 1:
-                    Console.WriteLine("В какой отдел добавить сотрудника?");
+                    Console.WriteLine("В какой отдел добавить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            Eployment.NewEployment();
-                            department.AddNewEployment(dep, Eployment);
-                            Console.WriteLine("Успешно");
-                           // Console.ReadKey();
-                            Console.Clear();
-                            break;
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        Eployment.NewEployment();
+                        department.AddNewEployee(dep, Eployment);
+                        Console.WriteLine("Успешно");
+                        // Console.ReadKey();
+                        Console.Clear();
+                        break;
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Из какого отдела удалить сотрудника?");
+                    Console.WriteLine("Из какого отдела удалить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            Console.WriteLine("Фамилия удаляемого сотрудника:");
-                            surename = Console.ReadLine();
-                            flag = department.DeleteEployment(dep, surename);
-                            if (flag)
-                            {
-                                Console.WriteLine("Успешно");
-                                break;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Неверная фамилия, или такой нет");
-                                break;
-                            }
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        flag = department.DeleteEployee(dep);
+                        if (flag)
+                        {
+                            Console.WriteLine("Успешно");
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
                     }
                     Console.ReadKey();
                     Console.Clear();
                     break;
                 case 3:
-                    Console.WriteLine("Какой отдел вывести? / all - вывести всех");
+                    Console.WriteLine("Какой отдел вывести?(1-3) / all - вывести всех");
                     while (true)
                     {
                         string tem = Console.ReadLine();
-                        if (int.TryParse(tem, out dep) == false)
+                        if (int.TryParse(tem, out dep))
                         {
-                            if (tem == "all")
+                            if (!(dep <= 3 && dep >= 1))
                             {
-                                department.ShowEployment();
-                                break;
+                                Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                                continue;
                             }
-                            else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            dep--;
+                            department.ShowEployee(dep);
                         }
                         else
                         {
-                            if (dep <= 3 && dep >= 1)
+                            if (tem != "all")
                             {
-                                dep--;
-                                department.ShowEployment(dep);
-                                break ;
+                                Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                                continue;
                             }
-                            else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            department.ShowEployee();
+                            break;
                         }
                     }
                     //Console.ReadKey();
                     //Console.Clear();
                     break;
                 case 4:
-                    Console.WriteLine("Из какого отдела редактируемый сотрудник?");
+                    Console.WriteLine("Из какого отдела редактируемый сотрудник?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            Console.Write("Фамилия редактируемого сотрудника:");
-                            surename = Console.ReadLine();
-                            flag = department.EditingEployment(dep, surename);
-                            if (flag)
-                            {
-                                Console.WriteLine("Успешно");
-                                break;
-                            }
-                            else
-                            {
-                                Console.WriteLine("Неверная фамилия, или такой нет");
-                            }
-
+                            Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            continue ;
                         }
-                        else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        flag = department.EditingEployee(dep);
+                        if (flag)
+                        {
+                            Console.WriteLine("Успешно");
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                     Console.ReadKey();
                     Console.Clear();
                     break;
                 case 5:
-                    Console.WriteLine("В какой отдел добавить сотрудника?");
+                    Console.WriteLine("В какой отдел добавить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            department.Constructor(dep);
-                            Console.WriteLine("Успешно");
-                            // Console.ReadKey();
-                            Console.Clear();
-                            break;
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        department.AddEmployeeByConstructor(dep);
+                        Console.WriteLine("Успешно");
+                        // Console.ReadKey();
+                        Console.Clear();
+                        break;
                     }
                     break;
                 case 6:
-                    Console.WriteLine("В какой отдел добавить сотрудника?");
+                    Console.WriteLine("Из какого отдела копируемый сотрудник?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.WriteLine("Введите номер копируемого сотрудника ");
-                            if (int.TryParse(Console.ReadLine(), out int number) == true) { }
-                            else break;
+                            if (department.CheckEmployee(dep))
+                            {
+                                Console.WriteLine("Введите номер копируемого сотрудника ");
+                                if (int.TryParse(Console.ReadLine(), out int number)) { }
+                                else break;
 
-                            Console.WriteLine("Введите количество копий ");
-                            if (int.TryParse(Console.ReadLine(), out int quantity) == true) { }
-                            else break;
+                                Console.WriteLine("Введите количество копий ");
+                                if (!int.TryParse(Console.ReadLine(), out int quantity))
+                                    break;
 
-                            department.Copy(dep, number, quantity);
-                            Console.WriteLine("Успешно");
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
+                                department.Copy(dep, number, quantity);
+                                Console.WriteLine("Успешно");
+                                Console.ReadKey();
+                                Console.Clear();
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("В этом отделе никого нет.");
+                                break;
+                            }
                         }
 
                         else Console.Write("Некоректный ввод, попробуй ещё раз: ");
                     }
                         break;
-                    break;
             }
         }
     }

@@ -5,191 +5,157 @@ namespace lab1
 {
  class Human
     {
+        private string _name;
+        private string _surename;
+        private DateTime _birthday;
+        private int _startYear;
         public Human()
         {
-            StartYear = 0;
-            Name = "пусто";
-            Surename = "пусто";
-            Day = 0;
-            Month = 0;
-            Year = 1980;
+            _startYear = 0;
+            _name = "пусто";
+            _surename = "пусто";
+            _birthday = DateTime.Now;
             Console.WriteLine("Вызван конструкотр без параметров");
+        }
+
+        public Human(int startYear,string name, DateTime birthday, string surename,int day,int month,int year)
+        {
+            _startYear = startYear;
+            _name = name;
+            _surename = surename;
+            _birthday = birthday;
+            Console.WriteLine("Вызван конструкотр с параметрами");
+            Console.ReadKey();
+        }
+        public Human(Human human)
+        {
+            _startYear = human._startYear;
+            _name = human._name;
+            _surename = human._surename;
+            _birthday = human._birthday;
+            Console.WriteLine("Вызван конструкотр копирования");
         }
         ~Human()
         {
             Console.WriteLine("Вызван деструктор");
+            Console.ReadKey();
         }
-        public Human(int startYear,string name, string surename,int day,int month,int year)
-        {
-            StartYear = startYear;
-            Name = name;
-            Surename = surename;
-            Day = day;
-            Month = month;
-            Year = year;
-            Console.WriteLine("Вызван конструкотр с параметрами");
-        }
-        public Human(Human human)
-        {
-            StartYear = human.StartYear;
-            Name = human.Name;
-            Surename = human.Surename;
-            Day = human.Day;
-            Month = human.Month;
-            Year = human.Year;
-            Console.WriteLine("Вызван конструкотр копирования");
-        }
-
-        private string Name;
-        private string Surename;
-        private int Day;
-        private int Month;
-        private int Year;
-        private int StartYear;
 
         public string GetName() 
         { 
-            return Name; 
+            return _name; 
         }
-        public int GetDay()
+
+        public DateTime Getbirthday()
         {
-            return Day;
-        }
-        public int GetMonth()
-        {
-            return Month;
-        }
-        public int GetYear()
-        {
-            return Year;
+            return _birthday;
         }
         public int GetStartYear()
         {
-            return StartYear;
+            return _startYear;
         } 
         public string GetSurename()
         {
-            return Surename;
+            return _surename;
         }
-
         public void AddHumanName()
         {
             Console.Write("Введите имя сотрудника: ");      
-            bool flag = true;
             while (true) {
+                bool flag = true;
                 string str = Console.ReadLine();
-                flag = true;
                 foreach (char c in str)
                 {
-                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
-                    {
-                    }
-                    else
+                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
                     {
                         flag = false;
+                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
                         break;
                     }
                 }
                 if (flag)
                 {
-                    Name = str;
+                    _name = str;
                     break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
                 }
             }
         }
         public void AddHumanSurename()
         {
             Console.Write("Введите фамилию сотрудника: ");
-            bool flag = true;
             while (true)
             {
+                bool flag = true;
                 string str = Console.ReadLine();
-                flag = true;
                 foreach (char c in str)
                 {
-                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
-                    {
-                    }
-                    else
+                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
                     {
                         flag = false;
+                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
                         break;
                     }
                 }
                 if (flag)
                 {
-                    Surename = str;
+                    _surename = str;
                     break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
                 }
             }
         }
-
         public void AddHumanBirthday()
         {
-            Console.WriteLine("Ввод Данных дня рождения сотрудника");
-            Console.Write("Введите день(0 - 31): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out int day) == true && day <= 31 && day > 0)
-                {
-                    Day = day;
-                    break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
-            Console.Write("Введите месяц(0 - 12): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out int month) == true && month <= 12 && month > 0)
-                {
-                    Month = month;
-                    break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
-            Console.Write("Введите год(1960 - 2005): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out int year) == true && year <= 2005 && year >= 1960)
-                {
-                    Year = year;
-                    break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
-        }
+            int day, month, year;
+            Console.WriteLine("Ввод Данных дня рождения сотрудника\nВведите день(1 - 31): ");
 
+            while (true)
+            {
+                var chek = int.TryParse(Console.ReadLine(), out day) && day <= 31 && day > 0;
+                if (!chek)
+                {
+                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                    continue;
+                }
+                break;
+            }
+            Console.Write("Введите месяц(1 - 12): ");
+            while (true)
+            {
+                var chek = int.TryParse(Console.ReadLine(), out month) && month <= 12 && month > 0;
+                if (!chek)
+                {
+                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                    continue;
+                }
+                break;
+            }
+            Console.Write($"Введите год({DateTime.Now.Year - 60} - {DateTime.Now.Year - 18}): ");
+            while (true)
+            {
+                var chek = int.TryParse(Console.ReadLine(), out year) && year <= DateTime.Now.Year - 18 && year >= DateTime.Now.Year - 60;
+                if (!chek)
+                {
+                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                    continue;
+                }
+                break;
+            }
+            _birthday = new DateTime(year, month, day);
+        }
         public void AddHumanStartYear()
         {
-            Console.Write("Введите год начала работы(2000 - 2023): ");
+            Console.Write($"Введите год начала работы(2000 - {DateTime.Now.Year}): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int year) == true && year <= 2023 && year >= 2000 && (year - 18)>= Year)
-                {
-                    StartYear = year;
-                    break;
-                }
-                else
+                var chek = int.TryParse(Console.ReadLine(), out int year) && year <= DateTime.Now.Year && year >= 2000 && (year - 18) >= _birthday.Year;
+                if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                    continue;
                 }
+
+                _startYear = year;
+                break;
             }
         }
 
@@ -203,9 +169,10 @@ namespace lab1
 
         public void Show()
         {
-            Console.Write("Имя и Фамилия - " + Name + " " + Surename + "\n");
-            Console.Write("День рождения - " + Day + "." + Month + "." + Year + "\n");
-            Console.Write("Год начала работы - " + StartYear + "\n\n");
+            Console.Write(
+                "Имя и Фамилия - " + _name + " " + _surename + "\n"+
+                $"День рождения - {_birthday.ToString("D")}\n"+
+                "Год начала работы - " + _startYear + "\n\n");
         }
 
     }

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <script language="JavaScript">
+
+
+function move() {
+if (pos < 0) direction= true;
+if (pos > 200) direction= false;
+
+if (direction) pos++
+else pos--;
+document.layers["myLayer2"].left= pos;
+
+}
+
+</script>
+</head>
+
+<body onLoad="setInterval('move()', 20)">
+    <ilayer name=myLayer2 left=0>
+
+        <font size=+1 color="#0000ff"><i>This text is inside a layer</i></font>
+    </ilayer>
+
+</body>
+</html>
+

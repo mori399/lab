@@ -4,30 +4,31 @@ class Program
 {
     static void Main()
     {
-        int number = 0, dep = 0;
-        string surename;
+        int dep = 0;
         bool flag;
         Department department = new Department();
         Human Eployment = new Human();
-        department.Initializations();
         while (true)
         {
-            Console.WriteLine("Что делаем?\n1 - Добавить сотрудника\n2 - Удалить сотрудника\n3 - Просмотреть сотрудников\n4 - Редактировать сотрудника\n");
+            Console.WriteLine("Что делаем?\n" +
+                "1 - Добавить сотрудника\n" +
+                "2 - Удалить сотрудника\n" +
+                "3 - Просмотреть сотрудников\n" +
+                "4 - Редактировать сотрудника\n");
             int.TryParse(Console.ReadLine(), out int n);
             switch (n)
             {
                 case 1:
-                    Console.WriteLine("В какой отдел добавить сотрудника?");
+                    Console.WriteLine("В какой отдел добавить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
                         {
                             dep--;
                             Eployment.NewEployment();
-                            department.AddNewEployment(dep, Eployment);
-                            number++;
+                            department.AddNewEployee(dep, Eployment);
                             Console.WriteLine("Успешно");
-                           // Console.ReadKey();
+                            // Console.ReadKey();
                             Console.Clear();
                             break;
                         }
@@ -35,15 +36,13 @@ class Program
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Из какого отдела удалить сотрудника?");
+                    Console.WriteLine("Из какого отдела удалить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.WriteLine("Фамилия удаляемого сотрудника:");
-                            surename = Console.ReadLine();
-                            flag = department.DeleteEployment(dep, surename);
+                            flag = department.DeleteEployee(dep);
                             if (flag)
                             {
                                 Console.WriteLine("Успешно");
@@ -51,7 +50,6 @@ class Program
                             }
                             else
                             {
-                                Console.WriteLine("Неверная фамилия");
                                 break;
                             }
                         }
@@ -61,26 +59,27 @@ class Program
                     Console.Clear();
                     break;
                 case 3:
-                    Console.WriteLine("Какой отдел вывести? / all - вывести всех");
+                    Console.WriteLine("Какой отдел вывести?(1-3) / all - вывести всех");
                     while (true)
                     {
                         string tem = Console.ReadLine();
-                        if (int.TryParse(tem, out dep) == false)
+                        if (int.TryParse(tem, out dep))
                         {
-                            if (tem == "all")
+                            if (dep <= 3 && dep >= 1)
                             {
-                                department.ShowEployment();
+                                dep--;
+                                department.ShowEployee(dep);
                                 break;
                             }
                             else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
                         }
                         else
                         {
-                            if (dep <= 3 && dep >= 1)
+                          
+                            if (tem == "all")
                             {
-                                dep--;
-                                department.ShowEployment(dep);
-                                break ;
+                                department.ShowEployee();
+                                break;
                             }
                             else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
                         }
@@ -89,15 +88,13 @@ class Program
                     //Console.Clear();
                     break;
                 case 4:
-                    Console.WriteLine("Из какого отдела редактируемый сотрудник?");
+                    Console.WriteLine("Из какого отдела редактируемый сотрудник?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) == true && dep <= 3 && dep >= 1)
+                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.Write("Фамилия редактируемого сотрудника:");
-                            surename = Console.ReadLine();
-                            flag = department.EditingEployment(dep, surename);
+                            flag = department.EditingEployee(dep);
                             if (flag)
                             {
                                 Console.WriteLine("Успешно");
@@ -105,7 +102,7 @@ class Program
                             }
                             else
                             {
-                                Console.WriteLine("Неверная фамилия");
+                                break;
                             }
 
                         }
@@ -113,9 +110,6 @@ class Program
                     }
                     Console.ReadKey();
                     Console.Clear();
-                    break;
-                case 5:
-
                     break;
             }
         }

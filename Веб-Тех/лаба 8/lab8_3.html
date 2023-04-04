@@ -1,0 +1,25 @@
+<html>
+
+<head>
+<script language="JavaScript">
+function showHide() {
+if (document.layers["myLayer"].visibility == "show")
+
+document.layers["myLayer"].visibility= "hide"
+
+else document.layers["myLayer"].visibility= "show";}
+</script>
+</head>
+<body>
+
+    <ilayer name=myLayer visibility=show>
+
+        <font size=+1 color="#0000ff"><i>This text is inside a layer</i></font>
+    </ilayer>
+
+    <form>
+
+        <input type="button" value="Show/Hide layer" onClick="showHide()">
+    </form>
+</body>
+</html>

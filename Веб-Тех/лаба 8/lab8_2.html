@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        .l1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 0;
+        }
+
+        .l2 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        p {
+            font-size: 30pt;
+            color: aqua;
+        }
+
+        input {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <script language="JavaScript">
+        function showHide() {
+            if (document.getElementById("myLayer").style.visibility == "visible")
+
+                document.getElementById("myLayer").style.visibility = "hidden"
+
+            else document.getElementById("myLayer").style.visibility = "visible";
+        }
+
+        function move() {
+            let start = Date.now();
+
+            let timer = setInterval(function () {
+                let timePassed = Date.now() - start - 1000;
+
+                    myLayer.style.left = timePassed / 5 + 'px';
+
+                if (timePassed > 0) clearInterval(timer);
+
+            }, 20);
+        }
+
+    </script>
+</head>
+
+<body onload="move()">
+    <div class="l1">
+        <img src="img.jpg">
+    </div>
+
+    <div class="l2" id="myLayer">
+        <p>Лабораторная работа №8</p>
+    </div>
+
+    <div class="l2">
+        <form style="font-size: 75pt;">
+            <br><input type="button" value="Показать/спрятать слой" onClick="showHide()">
+        </form>
+    </div>
+</body>
+
+</html>

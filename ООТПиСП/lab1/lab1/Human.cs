@@ -1,69 +1,76 @@
-﻿using System.Linq.Expressions;
+﻿using System;
+using System.Linq.Expressions;
+using System.Security.Cryptography;
 
 namespace lab1
 {
- class Human
+    class Human
     {
         public Human()
         {
-
+            _startYear = 0;
+            _name = "пусто";
+            _surename = "пусто";
+            _day = 0;
+            _month = 0;
+            _year = 1980;
         }
-        //конструктор копирования
         public Human(Human human)
         {
-            StartYear = human.StartYear;
-            Name = human.Name;
-            Surename = human.Surename;
-            Day = human.Day;
-            Month = human.Month;
-            Year = human.Year;
+            _startYear = human._startYear;
+            _name = human._name;
+            _surename = human._surename;
+            _day = human._day;
+            _month = human._month;
+            _year = human._year;
+        }
+        ~Human()
+        {
         }
 
-        private string Name;
-        private string Surename;
-        private int Day;
-        private int Month;
-        private int Year;
-        private int StartYear;
+        private string _name;
+        private string _surename;
+        private int _day;
+        private int _month;
+        private int _year;
+        private int _startYear;
 
-        public string GetName() 
-        { 
-            return Name; 
+        public string GetName()
+        {
+            return _name;
         }
         public int GetDay()
         {
-            return Day;
+            return _day;
         }
         public int GetMonth()
         {
-            return Month;
+            return _month;
         }
         public int GetYear()
         {
-            return Year;
+            return _year;
         }
         public int GetStartYear()
         {
-            return StartYear;
-        } 
+            return _startYear;
+        }
         public string GetSurename()
         {
-            return Surename;
+            return _surename;
         }
 
         public void AddHumanName()
         {
-            Console.Write("Введите имя сотрудника: ");      
+            Console.Write("Введите имя сотрудника: ");
             bool flag = true;
-            while (true) {
+            while (true)
+            {
                 string str = Console.ReadLine();
                 flag = true;
                 foreach (char c in str)
                 {
-                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
-                    {
-                    }
-                    else
+                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
                     {
                         flag = false;
                         break;
@@ -71,7 +78,7 @@ namespace lab1
                 }
                 if (flag)
                 {
-                    Name = str;
+                    _name = str;
                     break;
                 }
                 else
@@ -90,10 +97,7 @@ namespace lab1
                 flag = true;
                 foreach (char c in str)
                 {
-                    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я'))
-                    {
-                    }
-                    else
+                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
                     {
                         flag = false;
                         break;
@@ -101,7 +105,7 @@ namespace lab1
                 }
                 if (flag)
                 {
-                    Surename = str;
+                    _surename = str;
                     break;
                 }
                 else
@@ -114,12 +118,12 @@ namespace lab1
         public void AddHumanBirthday()
         {
             Console.WriteLine("Ввод Данных дня рождения сотрудника");
-            Console.Write("Введите день(0 - 31): ");
+            Console.Write("Введите день(1 - 31): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int day) == true && day <= 31 && day > 0)
+                if (int.TryParse(Console.ReadLine(), out int day) && day <= 31 && day > 0)
                 {
-                    Day = day;
+                    _day = day;
                     break;
                 }
                 else
@@ -127,12 +131,12 @@ namespace lab1
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
                 }
             }
-            Console.Write("Введите месяц(0 - 12): ");
+            Console.Write("Введите месяц(1 - 12): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int month) == true && month <= 12 && month > 0)
+                if (int.TryParse(Console.ReadLine(), out int month) && month <= 12 && month > 0)
                 {
-                    Month = month;
+                    _month = month;
                     break;
                 }
                 else
@@ -143,9 +147,9 @@ namespace lab1
             Console.Write("Введите год(1960 - 2005): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int year) == true && year <= 2005 && year >= 1960)
+                if (int.TryParse(Console.ReadLine(), out int year) && year <= 2005 && year >= 1960)
                 {
-                    Year = year;
+                    _year = year;
                     break;
                 }
                 else
@@ -160,9 +164,9 @@ namespace lab1
             Console.Write("Введите год начала работы(2000 - 2023): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int year) == true && year <= 2023 && year >= 2000 && (year - 18)>= Year)
+                if (int.TryParse(Console.ReadLine(), out int year) && year <= 2023 && year >= 2000 && (year - 18) >= _year)
                 {
-                    StartYear = year;
+                    _startYear = year;
                     break;
                 }
                 else
@@ -182,9 +186,9 @@ namespace lab1
 
         public void Show()
         {
-            Console.Write("Имя и Фамилия - " + Name + " " + Surename + "\n");
-            Console.Write("День рождения - " + Day + "." + Month + "." + Year + "\n");
-            Console.Write("Год начала работы - " + StartYear + "\n\n");
+            Console.Write("Имя и Фамилия - " + _name + " " + _surename + "\n");
+            Console.Write("День рождения - " + _day + "." + _month + "." + _year + "\n");
+            Console.Write("Год начала работы - " + _startYear + "\n\n");
         }
 
     }

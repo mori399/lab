@@ -1,25 +1,32 @@
-<html>
+﻿<!DOCTYPE html>
 
 <head>
-<script language="JavaScript">
-function showHide() {
-if (document.layers["myLayer"].visibility == "show")
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script language="JavaScript">
+        function showHide() {
+            if (document.getElementById("Layer").style.visibility == "visible")
 
-document.layers["myLayer"].visibility= "hide"
+                document.getElementById("Layer").style.visibility = "hidden"
 
-else document.layers["myLayer"].visibility= "show";}
-</script>
+            else document.getElementById("Layer").style.visibility = "visible";
+        }
+
+    </script>
 </head>
+
 <body>
+    <div class="pic">
+        <img src="book.png" width=" 420" height="120">
+    </div>
 
-    <ilayer name=myLayer visibility=show>
+    <div class="text" id="Layer">
+        <p>Текст поверх картинки🔥🔥🔥🔥</p>
+    </div>
 
-        <font size=+1 color="#0000ff"><i>This text is inside a layer</i></font>
-    </ilayer>
-
-    <form>
-
-        <input type="button" value="Show/Hide layer" onClick="showHide()">
-    </form>
+    <div class="text">
+        <form style="font-size: 50pt;">
+            <br><input type="button" value="убрать слой" onClick="showHide()">
+        </form>
+    </div>
 </body>
-</html>
+

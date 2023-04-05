@@ -1,0 +1,86 @@
+<script language="JavaScript">
+
+    function cycle1() {
+        var sum = 0;
+        for (var i = -100; i <= 100; i++) {
+            sum += i;
+        }
+        alert("Цикл суммирует значение i в от - 100 до 100, значение sum: " + sum);
+    }
+
+    function cycle2() {
+        var sum = 0;
+        for (var i = 50; i <= 100; i++) {
+            sum += i;
+        }
+        alert("значение sum: " + sum);
+    }
+
+    function cycle3() {
+        var sum = 50;
+        var resul = 0;
+        while (sum <= 100) {
+            resul += sum; 
+            sum += 1;
+        }
+        alert("значение sum: " + resul);
+    }
+
+    function cycle4() {
+        document.write("Цикл while: ");
+        var sum = 10;
+        while (sum >= 0) {
+            document.write(sum + " ");
+            sum -= 1;
+        }
+        document.write("|");
+
+    }
+
+    function cycle5() {
+        document.write("Цикл for: ");
+        for (var i = 10; i >= 0; i--) {
+            document.write(i + " ");
+        }
+    }
+
+    function time() {
+        alert("20:18 среда 5 апреля 2023, страна № 13 Бангладеш");
+    }
+</script>
+<head>
+</head>
+
+<body>
+    <form action="" onSubmit="cycle1(); return false;">
+
+        <div>
+            <input type="submit" value="Задание 1">
+        </div>
+
+    </form>
+    <form action="" onSubmit="cycle2(); cycle3(); return false;">
+
+        <div>
+            <input type="submit" value="Задание 2">
+        </div>
+
+    </form>
+
+    <form action="" onSubmit="cycle4(); cycle5(); return false;">
+
+        <div>
+            <input type="submit" value="Задание 3">
+        </div>
+
+    </form>
+    <form action="" onSubmit="time(); return false;">
+
+        <div>
+            <input type="submit" value="Задание 4">
+        </div>
+
+    </form>
+
+
+</body>

@@ -1,27 +1,30 @@
-<html>
+﻿<!DOCTYPE html>
+
 <head>
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <script language="JavaScript">
+        function move() {
+            let start = Date.now();
 
+            let timer = setInterval(function () {
+                let timePassed = Date.now() - start - 1000;
 
-function move() {
-if (pos < 0) direction= true;
-if (pos > 200) direction= false;
+                Layer.style.left = timePassed / 5 + 'px';
 
-if (direction) pos++
-else pos--;
-document.layers["myLayer2"].left= pos;
+                if (timePassed > 0) clearInterval(timer);
 
-}
+            }, 20);
+        }
 
-</script>
+    </script>
 </head>
 
-<body onLoad="setInterval('move()', 20)">
-    <ilayer name=myLayer2 left=0>
+<body onload="move()">
+    <div class="pic">
+        <img src="book.png" width=" 420" height="120">
+    </div>
 
-        <font size=+1 color="#0000ff"><i>This text is inside a layer</i></font>
-    </ilayer>
-
+    <div class="text" id="Layer">
+        <p>Текст заехал поверх картинки🔥🔥🔥🔥</p>
+    </div>
 </body>
-</html>
-

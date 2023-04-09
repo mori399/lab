@@ -7,7 +7,8 @@ class Program
         int dep = 0;
         bool flag;
         Department department = new Department();
-        Human Eployment = new Human();
+        Human eployment = new Human();
+        Workers workers = new Workers();
         while (true)
         {
             Console.WriteLine("Что делаем?\n" +
@@ -25,56 +26,59 @@ class Program
                     Console.WriteLine("В какой отдел добавить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            Eployment.NewEployment();
-                            department.AddNewEployee(dep, Eployment);
-                            Console.WriteLine("Успешно");
-                           // Console.ReadKey();
-                            Console.Clear();
-                            break;
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        eployment.NewEployment();
+                        department.AddNewEployee(dep, eployment);
+                        Console.WriteLine("Успешно");
+                        // Console.ReadKey();
+                        Console.Clear();
+                        break;
                     }
                     break;
                 case 2:
                     Console.WriteLine("Из какого отдела удалить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            flag = department.DeleteEployee(dep);
-                            if (flag)
-                            {
-                                Console.WriteLine("Успешно");
-                                break;
-                            }
-                            else
-                            {
-                                break;
-                            }
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        flag = department.DeleteEployee(dep);
+                        if (flag)
+                        {
+                            Console.WriteLine("Успешно");
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
+
                     }
                     Console.ReadKey();
                     Console.Clear();
                     break;
                 case 3:
-                    Console.WriteLine("Какой отдел вывести?(1-3) / all - вывести всех");
+                    Console.WriteLine("Какой отдел вывести?(1-3) / all - вывести всех / wor - вывести работников");
                     while (true)
                     {
                         string tem = Console.ReadLine();
                         if (int.TryParse(tem, out dep))
                         {
-                            if (dep <= 3 && dep >= 1)
+                            if (!(dep <= 3 && dep >= 1))
                             {
-                                dep--;
-                                department.ShowEployee(dep);
-                                break;
+                                Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                                continue;
                             }
-                            else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            dep--;
+                            department.ShowEployee(dep);
                         }
                         else
                         {
@@ -83,7 +87,16 @@ class Program
                                 department.ShowEployee();
                                 break;
                             }
-                            else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            //else if (tem == "wor")
+                            //{
+                            //    department.ShowWorker();
+                            //    break;
+                            //}
+                            else
+                            {
+                                Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                                continue;
+                            }
                         }
                     }
                     //Console.ReadKey();
@@ -93,22 +106,22 @@ class Program
                     Console.WriteLine("Из какого отдела редактируемый сотрудник?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            flag = department.EditingEployee(dep);
-                            if (flag)
-                            {
-                                Console.WriteLine("Успешно");
-                                break;
-                            }
-                            else
-                            {
-                                break;
-                            }
-
+                            Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.WriteLine("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        flag = department.EditingEployee(dep);
+                        if (flag)
+                        {
+                            Console.WriteLine("Успешно");
+                            break;
+                        }
+                        else
+                        {
+                            break;
+                        }
                     }
                     Console.ReadKey();
                     Console.Clear();
@@ -117,16 +130,17 @@ class Program
                     Console.WriteLine("В какой отдел добавить сотрудника?(1-3)");
                     while (true)
                     {
-                        if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
+                        if (!(int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1))
                         {
-                            dep--;
-                            department.AddEmployeeByConstructor(dep);
-                            Console.WriteLine("Успешно");
-                            // Console.ReadKey();
-                            Console.Clear();
-                            break;
+                            Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                            continue;
                         }
-                        else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        dep--;
+                        department.AddEmployeeByConstructor(dep);
+                        Console.WriteLine("Успешно");
+                        // Console.ReadKey();
+                        Console.Clear();
+                        break;
                     }
                     break;
                 case 6:
@@ -136,19 +150,27 @@ class Program
                         if (int.TryParse(Console.ReadLine(), out dep) && dep <= 3 && dep >= 1)
                         {
                             dep--;
-                            Console.WriteLine("Введите номер копируемого сотрудника ");
-                            if (int.TryParse(Console.ReadLine(), out int number)) { }
-                            else break;
+                            if (department.CheckEmployee(dep))
+                            {
+                                Console.WriteLine("Введите номер копируемого сотрудника ");
+                                if (int.TryParse(Console.ReadLine(), out int number)) { }
+                                else break;
 
-                            Console.WriteLine("Введите количество копий ");
-                            if (!int.TryParse(Console.ReadLine(), out int quantity)) 
+                                Console.WriteLine("Введите количество копий ");
+                                if (!int.TryParse(Console.ReadLine(), out int quantity))
+                                    break;
+
+                                department.Copy(dep, number, quantity);
+                                Console.WriteLine("Успешно");
+                                Console.ReadKey();
+                                Console.Clear();
                                 break;
-
-                            department.Copy(dep, number, quantity);
-                            Console.WriteLine("Успешно");
-                            Console.ReadKey();
-                            Console.Clear();
-                            break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("В этом отделе никого нет.");
+                                break;
+                            }
                         }
 
                         else Console.Write("Некоректный ввод, попробуй ещё раз: ");
@@ -164,14 +186,10 @@ class Program
                             Console.WriteLine("Введите номер сотрудника ");
                             if (int.TryParse(Console.ReadLine(), out int number)) { }
                             else break;
-
-                            Console.WriteLine("Введите количество копий ");
-                            if (!int.TryParse(Console.ReadLine(), out int quantity))
-                                break;
-
-                            department.Copy(dep, number, quantity);
-                            Console.WriteLine("Успешно");
-                            Console.ReadKey();
+                           // eployment = department.GetHuman(dep,number);
+                            //workers.AddWorkers(eployment);
+                            department.AddNewWorker(dep,number);
+                            //Console.ReadKey();
                             Console.Clear();
                             break;
                         }

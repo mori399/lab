@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Картинки</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <p><img id="largeImg" src="pic1.jpg" alt="Large image"></p>
+
+
+    <ul id="thumbs">
+        <!-- браузер показывает небольшую встроенную подсказку из атрибута "title" при наведении курсора на текст -->
+        <li>
+            <a href="pic1.jpg" title="Image 2"><img src="pic1.jpg" class="pic"></a>
+        </li>
+        <li>
+            <a href="pic2.jpg" title="Image 3"><img src="pic2.jpg" class="pic"></a>
+        </li>
+        <li>
+            <a href="pic3.jpg" title="Image 4"><img src="pic3.jpg" class="pic"></a>
+        </li>
+        <li>
+            <a href="pic4.jpg" title="Image 5"><img src="pic4.jpg" class="pic"></a>
+        </li>
+        <li>
+            <a href="pic5.jpg" title="Image 6"><img src="pic5.jpg" class="pic"></a>
+        </li>
+    </ul>
+
+
+    <script>
+        thumbs.onclick = function (event) {
+            let thumbnail = event.target.closest('a');
+
+            if (!thumbnail) return;
+            showThumbnail(thumbnail.href, thumbnail.title);
+            event.preventDefault();
+        }
+
+        function showThumbnail(href, title) {
+            largeImg.src = href;
+            largeImg.alt = title;
+        }
+    </script>
+</body>
+</html>

@@ -5,10 +5,10 @@ namespace lab1
 {
     class Human
     {
-        private string _name;
-        private string _surename;
-        private DateTime _birthday;
-        private int _startYear;
+        protected string _name;
+        protected string _surename;
+        protected DateTime _birthday;
+        protected int _startYear;
         public Human()
         {
             _startYear = 0;
@@ -18,14 +18,13 @@ namespace lab1
             Console.WriteLine("Вызван конструкотр без параметров");
         }
 
-        public Human(int startYear, string name, DateTime birthday, string surename, int day, int month, int year)
+        public Human(int startYear, string name, DateTime birthday, string surename)
         {
             _startYear = startYear;
             _name = name;
             _surename = surename;
             _birthday = birthday;
             Console.WriteLine("Вызван конструкотр с параметрами");
-            Console.ReadKey();
         }
         public Human(Human human)
         {
@@ -38,7 +37,7 @@ namespace lab1
         ~Human()
         {
             Console.WriteLine("Вызван деструктор");
-            Console.ReadKey();
+           
         }
 
         public string GetName()
@@ -58,25 +57,35 @@ namespace lab1
         {
             return _surename;
         }
+
+
+        public void SetName(string name)
+        {
+            _name = name;
+        }
+
+        public void Setbirthday(DateTime birthday)
+        {
+             _birthday = birthday;
+        }
+        public void SetStartYear(int startyear)
+        {
+           _startYear = startyear;
+        }
+        public void SetSurename(string surename)
+        {
+            _surename = surename;
+        }
         public void AddHumanName()
         {
             Console.Write("Введите имя сотрудника: ");
             while (true)
             {
-                bool flag = true;
                 string str = Console.ReadLine();
-                foreach (char c in str)
+                
+                if (CorrectImput.IsLatters(str))
                 {
-                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
-                    {
-                        flag = false;
-                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                        break;
-                    }
-                }
-                if (flag)
-                {
-                    _name = str;
+                    SetName(str);
                     break;
                 }
             }
@@ -86,32 +95,22 @@ namespace lab1
             Console.Write("Введите фамилию сотрудника: ");
             while (true)
             {
-                bool flag = true;
                 string str = Console.ReadLine();
-                foreach (char c in str)
+                if (CorrectImput.IsLatters(str))
                 {
-                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
-                    {
-                        flag = false;
-                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                        break;
-                    }
-                }
-                if (flag)
-                {
-                    _surename = str;
+                    SetSurename(str);
                     break;
                 }
             }
         }
         public void AddHumanBirthday()
         {
-            int day, month, year;
+            int day, month, year,years;
             Console.WriteLine("Ввод Данных дня рождения сотрудника\nВведите день(1 - 31): ");
 
             while (true)
             {
-                var chek = int.TryParse(Console.ReadLine(), out day) && day <= 31 && day > 0;
+                var chek = int.TryParse(Console.ReadLine(), out day) && CorrectImput.InRange(1, 31, day);
                 if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
@@ -122,7 +121,7 @@ namespace lab1
             Console.Write("Введите месяц(1 - 12): ");
             while (true)
             {
-                var chek = int.TryParse(Console.ReadLine(), out month) && month <= 12 && month > 0;
+                var chek = int.TryParse(Console.ReadLine(), out month) && CorrectImput.InRange(1, 12, month);
                 if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
@@ -133,7 +132,7 @@ namespace lab1
             Console.Write($"Введите год({DateTime.Now.Year - 60} - {DateTime.Now.Year - 18}): ");
             while (true)
             {
-                var chek = int.TryParse(Console.ReadLine(), out year) && year <= DateTime.Now.Year - 18 && year >= DateTime.Now.Year - 60;
+                var chek = int.TryParse(Console.ReadLine(), out year) && CorrectImput.InRange(DateTime.Now.Year - 60, DateTime.Now.Year - 18, year);
                 if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
@@ -141,21 +140,21 @@ namespace lab1
                 }
                 break;
             }
-            _birthday = new DateTime(year, month, day);
+            Setbirthday(new DateTime(year, month, day));
         }
         public void AddHumanStartYear()
         {
             Console.Write($"Введите год начала работы(2000 - {DateTime.Now.Year}): ");
             while (true)
             {
-                var chek = int.TryParse(Console.ReadLine(), out int year) && year <= DateTime.Now.Year && year >= 2000 && (year - 18) >= _birthday.Year;
+                var chek = int.TryParse(Console.ReadLine(), out int year) && CorrectImput.InRange(2000, DateTime.Now.Year, year) && (year - 18) >= _birthday.Year;
                 if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
                     continue;
                 }
 
-                _startYear = year;
+                SetStartYear(year);
                 break;
             }
         }
@@ -168,7 +167,7 @@ namespace lab1
             AddHumanStartYear();
         }
 
-        public void Show()
+        public virtual void Show()
         {
             Console.Write(
                 "Имя и Фамилия - " + _name + " " + _surename + "\n" +

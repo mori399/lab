@@ -9,28 +9,31 @@ namespace lab1
 {
     internal class Workers : Human
     {
+        private string _profession;
+
         public Workers()
         {
-            //_human = null;
             _profession = "non";
-            Console.WriteLine("Вызван конструкотр без параметров");
+            Console.WriteLine("Вызван конструкотр без параметров наследовательного класса Workers");
+            
         }
-        public Workers(Human hum,string profes) 
+        public Workers(int startYear, string name, DateTime birthday, string surename, string profes) : base (startYear, name, birthday, surename)
         {
-            //_human = hum;
             _profession = profes;
-            Console.WriteLine("Вызван конструкотр с параметрами");
+            Console.WriteLine("Вызван конструкотр с параметрами наследовательного класса Workers");
+            Console.ReadKey();
         }
-        public Workers(Workers workers)
+        public Workers(Workers workers): base(workers)
         {
-           // _human = workers._human;
             _profession = workers._profession;
-            Console.WriteLine("Вызван конструкотр копирования");
+            Console.WriteLine("Вызван конструкотр копирования наследовательного класса Workers");
+        }
+        ~Workers()
+        {
+            Console.WriteLine("Вызван деструктор наследовательного класса Workers");
+            //Console.ReadKey();
         }
 
-        List <Workers> workers = new List <Workers> ();
-        private string _profession;
-       // private Human _human;
         public string GetProfession()
         {
             return _profession;
@@ -39,41 +42,22 @@ namespace lab1
         public static string AddWorkersProfes()
         {
             Console.Write("Введите профессию сотрудника: ");
-            bool flag = true;
             while (true)
             {
                 string str = Console.ReadLine();
-                flag = true;
-                foreach (char c in str)
-                {
-                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
-                    {
-                        flag = false;
-                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                        break;
-                    }
-                }
-                if (flag)
+                if (CorrectImput.IsLatters(str))
                 {
                     return str;
-                    break;
                 }
             }
         }
-        public void AddWorkers(Human hum)
+        public override void Show()
         {
-            //_human = hum;
-            AddWorkersProfes();
-        } 
-
-        public new void Show()
-        {
-            //_human.Show();
             Console.Write(
                  "Имя и Фамилия - " + GetName() + " " + GetSurename() + "\n" +
                  $"День рождения - {Getbirthday().ToString("D")}\n" +
                  "Год начала работы - " + GetStartYear() + "\n"+
-                 "Профессия - " + _profession + "\n\n" );
+                 "Профессия - " + _profession + "\n" );
         }
     }
 }

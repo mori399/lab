@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
@@ -7,7 +8,6 @@ namespace lab1
 {
     class Department
     {
-       // List<Workers> workers = new List<Workers>();
         List<Human>[] depart = new List<Human>[3];
         public void AddNewEployee(int num, Human hum)
         {
@@ -102,15 +102,6 @@ namespace lab1
             if (depart[num].Count == 0) Console.WriteLine("Тут пусто\n");
         }
 
-        //public void ShowWorker()
-        //{
-        //    for (int i = 0; i < workers.Count; i++)
-        //    {
-        //        Console.WriteLine(i + ".");
-        //        workers[i].ShowWorkers();
-        //    }
-        //    if (workers.Count == 0) Console.WriteLine("Тут пусто\n");
-        //}
         public bool EditingEployee(int num)
         {
             int count = 0;
@@ -188,49 +179,30 @@ namespace lab1
         }
         public void AddEmployeeByConstructor(int dep)
         {
-            int startyear = 0, day = 0, year = 0, month = 0;
-            string name = "", surename = "";
+            int startyear;
+            int day;
+            int year; 
+            int month;
+            string name; 
+            string surename;
             DateTime birthday;
-            bool flag = true;
             Console.Write("Введите имя сотрудника: ");
             while (true)
             {
                 name = Console.ReadLine();
-                flag = true;
-                foreach (char c in name)
-                {
-                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
-                    {
-                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                        flag = false;
-                        break;
-                    }
-
-                }
-                if (flag) break;
+                if (CorrectImput.IsLatters(name)) break;
             }
             Console.Write("Введите фамилию сотрудника: ");
             while (true)
             {
                 surename = Console.ReadLine();
-                flag = true;
-                foreach (char c in surename)
-                {
-                    if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= 'а' && c <= 'я') || (c >= 'А' && c <= 'Я')))
-                    {
-                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                        flag = false;
-                        break;
-                    }
-
-                }
-                if (flag) break;
+                if (CorrectImput.IsLatters(surename)) break;
             }
             Console.WriteLine("Ввод Данных дня рождения сотрудника");
             Console.Write("Введите день(1 - 31): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out day) && day <= 12 && day > 0)
+                if (int.TryParse(Console.ReadLine(),out day) && CorrectImput.InRange(1, 31, day))
                 {
                     break;
                 }
@@ -242,7 +214,7 @@ namespace lab1
             Console.Write("Введите месяц(1 - 12): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out month) && day <= 31 && day > 0)
+                if (int.TryParse(Console.ReadLine(), out month) && CorrectImput.InRange(1, 12, month))
                 {
                     break;
                 }
@@ -255,7 +227,7 @@ namespace lab1
             Console.Write($"Введите год({DateTime.Now.Year - 60} - {DateTime.Now.Year - 18}): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out year) && year <= DateTime.Now.Year - 18 && year >= DateTime.Now.Year - 60)
+                if (int.TryParse(Console.ReadLine(), out year) && CorrectImput.InRange(DateTime.Now.Year - 60, DateTime.Now.Year - 18, year))
                 {
                     break;
                 }
@@ -265,10 +237,10 @@ namespace lab1
                 }
             }
             birthday = new DateTime(year, month, day);
-            Console.Write("Введите год начала работы(2000 - 2023): ");
+            Console.Write($"Введите год начала работы(2000 - {DateTime.Now.Year}): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out startyear) && startyear <= 2023 && startyear >= 2000 && (startyear - 18) >= year)
+                if (int.TryParse(Console.ReadLine(), out startyear) && CorrectImput.InRange(2000, DateTime.Now.Year, startyear) && (startyear - 18) >= year)
                 {
                     break;
                 }
@@ -277,16 +249,35 @@ namespace lab1
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
                 }
             }
-            Human hum = new Human(startyear, name, birthday, surename, day, month, year);
+            Human hum = new Human(startyear, name, birthday, surename);
 
             depart[dep].Add(hum);
         }
         public void Copy(int dep, int number, int quantity)
         {
-            for (int i = 0; i < quantity; i++)
+            if (depart[dep][number] is Workers wor)
             {
-                Human human = new Human(depart[dep][number]);
-                depart[dep].Add(human);
+                for (int i = 0; i < quantity; i++)
+                {
+                    Workers workers = new Workers(wor);
+                    depart[dep].Add(workers);
+                }
+            }
+            else if (depart[dep][number] is Dismissed dis)
+            {
+                for (int i = 0; i < quantity; i++)
+                {
+                    Dismissed workers = new Dismissed(dis);
+                    depart[dep].Add(workers);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < quantity; i++)
+                {
+                    Human human = new Human(depart[dep][number]);
+                    depart[dep].Add(human);
+                }
             }
         }
         public bool CheckEmployee(int dep)
@@ -298,20 +289,28 @@ namespace lab1
             else return false;
         }
 
-        public void AddNewWorker(int dep,int number)
+        public bool AddNewWorker(int dep,int number)
         {
-            Workers worker = new Workers(depart[dep][number],Workers.AddWorkersProfes());
-            //Workers workers = depart[dep][number];
-            depart[dep][number] = worker;          
+            if (depart[dep].Count == 0)
+            {
+                Console.WriteLine("В этом отделе никого нет.");
+                return false;
+            }
+            Workers worker = new Workers(depart[dep][number].GetStartYear(), depart[dep][number].GetName(), depart[dep][number].Getbirthday(), depart[dep][number].GetSurename(), Workers.AddWorkersProfes());
+            depart[dep][number] = worker;
+            return true;
         }
-
-        public Human GetHuman(int dep, int number)
+        public bool DismissEmployee(int dep,int number)
         {
-            Human hum = depart[dep][number];
-            //depart[dep].RemoveAt(number);
-            return hum;
+            if (depart[dep].Count == 0)
+            {
+                Console.WriteLine("В этом отделе никого нет.");
+                return false;
+            }
+            Dismissed dismiss = new Dismissed(depart[dep][number].GetStartYear(), depart[dep][number].GetName(), depart[dep][number].Getbirthday(), depart[dep][number].GetSurename(), Dismissed.AddDismissedProfes(depart[dep][number].GetStartYear()));
+            depart[dep][number] = dismiss;
+            return true;
+
         }
-
-
     }
 }

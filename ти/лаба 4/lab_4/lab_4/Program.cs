@@ -76,10 +76,11 @@ List<int> CalcKeyLengths(Dictionary<string, List<int>> repeatedMap)
 
 var cryptedText =
     Crypt(
-        "DJEOIJOI JEOIDJEOIHFOJED EHFIOEJOIEHFOEJDOI JEDHOEIJDOEJDEHFEJDJNAONOEJDOAD ONEOIDOEDJ OAKEDNOEADNOIEDJ OEAHFOIJPAJOWKOPJPQOJDOQIJDOQNC IJDIJONEIODJAEOIDJOAEIHAOJCOEANOINEOI JDIOEJADOSOJ JDEOIJDALKJD JDJEIOJAFKLAJKEADJLK JELJADLKJAELKDJAEOIFJ AJPAPDJAFOIOIEJD", "HAVEIOPKCXZ",
-        BuildShift("HAVEIOPKCXZ"));
+        "DJEOIJOI JEOIDJEOIHFOJED EHFIOEJOIEHFOEJDOI JEDHOEIJDOEJDEHFEJDJNAONOEJDOAD", //A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+        "MOUSE",                                                                       //M N O P Q R S T U V W X Y Z A B C D E F G H I J K L
+        BuildShift("MOUSE"));      
 var lengths = CalcKeyLengths(RepeatedBlocks(cryptedText));
 
-Console.WriteLine($"Crypted Text: {cryptedText}");
+Console.WriteLine($"Зашифрованый текст: {cryptedText}");
 foreach (var length in lengths)
-    Console.WriteLine($"Possible key length: {length}");
+    Console.WriteLine($"Возможная длинна ключа: {length}");

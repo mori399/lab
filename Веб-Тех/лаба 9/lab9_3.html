@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+
+    <p>Ќажмите "Q" и "W" вместе (€зык значени€ не играет).</p>
+
+    <script>
+    function runOnKeys(func, ...codes) {
+      let pressed = new Set();
+
+      document.addEventListener('keydown', function(event) {
+        pressed.add(event.code);
+
+        for (let code of codes) { // все ли клавиши из набора нажаты?
+          if (!pressed.has(code)) {
+            return;
+          }
+        }
+
+        // да, все
+
+        // во врем€ показа alert, если посетитель отпустит клавиши - не возникнет keyup
+        // при этом JavaScript "пропустит" факт отпускани€ клавиш, а pressed[keyCode] останетс€ true
+        // чтобы избежать "залипани€" клавиши -- обнул€ем статус всех клавиш, пусть нажимает всЄ заново
+        pressed.clear();
+
+        func();
+      });
+
+      document.addEventListener('keyup', function(event) {
+        pressed.delete(event.code);
+      });
+
+    }
+
+    runOnKeys(
+      () => alert("ѕривет!"),
+      "KeyQ",
+      "KeyW"
+    );
+    </script>
+
+</body>
+
+</html>

@@ -1,5 +1,4 @@
-﻿using System.Linq.Expressions;
-using System.Security.Cryptography;
+﻿
 
 namespace lab1
 {
@@ -103,14 +102,14 @@ namespace lab1
                 }
             }
         }
+
         public void AddHumanBirthday()
         {
-            int day, month, year,years;
-            Console.WriteLine("Ввод Данных дня рождения сотрудника\nВведите день(1 - 31): ");
-
+            DateTime birthday;
+            Console.WriteLine("Введите день рождения сотрудника: ");
             while (true)
             {
-                var chek = int.TryParse(Console.ReadLine(), out day) && CorrectImput.InRange(1, 31, day);
+                var chek = DateTime.TryParse(Console.ReadLine(),out birthday);
                 if (!chek)
                 {
                     Console.Write("Некоректный ввод, попробуй ещё раз: ");
@@ -118,30 +117,9 @@ namespace lab1
                 }
                 break;
             }
-            Console.Write("Введите месяц(1 - 12): ");
-            while (true)
-            {
-                var chek = int.TryParse(Console.ReadLine(), out month) && CorrectImput.InRange(1, 12, month);
-                if (!chek)
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                    continue;
-                }
-                break;
-            }
-            Console.Write($"Введите год({DateTime.Now.Year - 60} - {DateTime.Now.Year - 18}): ");
-            while (true)
-            {
-                var chek = int.TryParse(Console.ReadLine(), out year) && CorrectImput.InRange(DateTime.Now.Year - 60, DateTime.Now.Year - 18, year);
-                if (!chek)
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                    continue;
-                }
-                break;
-            }
-            Setbirthday(new DateTime(year, month, day));
+            Setbirthday(birthday);
         }
+
         public void AddHumanStartYear()
         {
             Console.Write($"Введите год начала работы(2000 - {DateTime.Now.Year}): ");

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data;
-using System.Runtime.Intrinsics.Arm;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Linq;
+﻿
 
 namespace lab1
 {
@@ -180,9 +176,6 @@ namespace lab1
         public void AddEmployeeByConstructor(int dep)
         {
             int startyear;
-            int day;
-            int year; 
-            int month;
             string name; 
             string surename;
             DateTime birthday;
@@ -198,49 +191,23 @@ namespace lab1
                 surename = Console.ReadLine();
                 if (CorrectImput.IsLatters(surename)) break;
             }
-            Console.WriteLine("Ввод Данных дня рождения сотрудника");
-            Console.Write("Введите день(1 - 31): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(),out day) && CorrectImput.InRange(1, 31, day))
-                {
-                    break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
-            Console.Write("Введите месяц(1 - 12): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out month) && CorrectImput.InRange(1, 12, month))
-                {
-                    break;
-                }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
 
-            Console.Write($"Введите год({DateTime.Now.Year - 60} - {DateTime.Now.Year - 18}): ");
-            while (true)
-            {
-                if (int.TryParse(Console.ReadLine(), out year) && CorrectImput.InRange(DateTime.Now.Year - 60, DateTime.Now.Year - 18, year))
+                Console.WriteLine("Введите день рождения сотрудника: ");
+                while (true)
                 {
+                    var chek = DateTime.TryParse(Console.ReadLine(), out birthday);
+                    if (!chek)
+                    {
+                        Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        continue;
+                    }
                     break;
                 }
-                else
-                {
-                    Console.Write("Некоректный ввод, попробуй ещё раз: ");
-                }
-            }
-            birthday = new DateTime(year, month, day);
+
             Console.Write($"Введите год начала работы(2000 - {DateTime.Now.Year}): ");
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out startyear) && CorrectImput.InRange(2000, DateTime.Now.Year, startyear) && (startyear - 18) >= year)
+                if (int.TryParse(Console.ReadLine(), out startyear) && CorrectImput.InRange(2000, DateTime.Now.Year, startyear) && (startyear - 18) >= birthday.Year)
                 {
                     break;
                 }

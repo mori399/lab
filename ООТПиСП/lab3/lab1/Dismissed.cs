@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace lab1
 {
     internal class Dismissed : Human
@@ -12,22 +7,22 @@ namespace lab1
         public Dismissed()
         {
             _dismissedDate = new DateTime();
-            Console.WriteLine("Вызван конструкотр без параметров наследовательного класса Dismissed");
+            Console.WriteLine("Вызван конструкотр без параметров наследственного класса Dismissed");
 
         }
         public Dismissed(int startYear, string name, DateTime birthday, string surename, DateTime date) : base(startYear, name, birthday, surename)
         {
             _dismissedDate = date;
-            Console.WriteLine("Вызван конструкотр с параметрами наследовательного класса Dismissed");
+            Console.WriteLine("Вызван конструкотр с параметрами наследственного класса Dismissed");
         }
         public Dismissed(Dismissed dismissed) : base(dismissed)
         {
             _dismissedDate = dismissed._dismissedDate;
-            Console.WriteLine("Вызван конструкотр копирования наследовательного класса Dismissed");
+            Console.WriteLine("Вызван конструкотр копирования наследственного класса Dismissed");
         }
         ~Dismissed()
         {
-            Console.WriteLine("Вызван деструктор наследовательного класса Dismissed");
+            Console.WriteLine("Вызван деструктор наследственного класса Dismissed");
             //Console.ReadKey();
         }
 

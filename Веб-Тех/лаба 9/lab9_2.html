@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <style>
+        .selected {
+            background: red;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    Кликни на элемент списка, чтобы выделить его.
+    <br>
+
+    <ul id="ul">
+        <li>Илья флекс</li>
+        <li>Что нибудь в рифму</li>
+        <li>Я не могу придумать по этому я сделал названия предметов</li>
+        <li>Больше не у кого спросить</li>
+        <li>Слово</li>
+    </ul>
+
+    <script>
+        ul.onclick = function (event) {
+            if (event.target.tagName != "LI") return;
+
+            if (event.ctrlKey || event.metaKey) {
+                toggleSelect(event.target);
+            } else {
+                singleSelect(event.target);
+            }
+
+        }
+
+        // предотвращает ненужное выделение элементов списка при клике
+        ul.onmousedown = function () {
+            return false;
+        };
+
+        function toggleSelect(li) {
+            li.classList.toggle('selected');
+        }
+
+        function singleSelect(li) {
+            let selected = ul.querySelectorAll('.selected');
+            for (let elem of selected) {
+                elem.classList.remove('selected');
+            }
+            li.classList.add('selected');
+        }
+
+    </script>
+
+</body>
+</html>

@@ -2,14 +2,13 @@
 <html>
 
 <head>
-    <title>Картинки</title>
     <link rel="stylesheet" href="styles.css">
     <meta charset="utf-8">
 </head>
 
 <body>
 
-    <p><img id="largeImg" src="pic1.jpg" alt="Large image"></p>
+<img id="largeImg" src="pic1.jpg" alt="Large image">
 
 
     <ul id="thumbs">
@@ -36,13 +35,12 @@
             let thumbnail = event.target.closest('a');
 
             if (!thumbnail) return;
-            showThumbnail(thumbnail.href, thumbnail.title);
+            showThumbnail(thumbnail.href);
             event.preventDefault();
         }
 
-        function showThumbnail(href, title) {
+        function showThumbnail(href) {
             largeImg.src = href;
-            largeImg.alt = title;
         }
     </script>
 </body>

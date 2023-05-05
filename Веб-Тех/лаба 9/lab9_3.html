@@ -1,8 +1,12 @@
-<!DOCTYPE HTML>
 <html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
 <body>
 
-    <p>Нажмите "Q" и "W" вместе (язык значения не играет).</p>
+    <p>Нажмите "Q" и "W" чтобы нажать</p>
 
     <script>
     function runOnKeys(func, ...codes) {
@@ -34,7 +38,7 @@
     }
 
     runOnKeys(
-      () => alert("Привет!"),
+      () => alert("Вы нажали"),
       "KeyQ",
       "KeyW"
     );

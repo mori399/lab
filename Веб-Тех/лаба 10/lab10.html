@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flexbox structure</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            width: 500px;
+            background-color: turquoise;
+        }
+
+        .inner-container {
+            display: flex;
+            flex-direction:column-reverse;
+            justify-content: center;
+            align-items: center;
+            height: 90%;
+            width: 90%;
+            background-color: blue;
+        }
+
+        .dark-green-container {
+            display: flex;
+            height: 25%;
+            width: 30%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: darkgreen;
+        }
+
+        .dark-green-container#right {
+            justify-content: right;
+            align-items: right;
+        }
+
+        .light-green-square {
+            height: 85%;
+            width: 30%;
+            text-align: right;
+            margin: 2%;
+            background-color: lightgreen;
+        }
+
+        .light-green-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 85%;
+            width: 25%;
+            margin: 2%;
+            background-color: lightgreen;
+        }
+
+        .light-green-container#yellow {
+            justify-content: left;
+            height: 80%;
+            width: 100%;
+        }
+
+        .yellow-box {
+            height: 80%;
+            width: 80%;
+            background-color: yellow;
+        }
+
+        .yellow-box#left {
+            width: 40%;
+            margin-left: 2%;
+        }
+
+        .yellow-box#right {
+            width: 30%;
+            text-align: right;
+            margin: 10px;
+        }
+
+        .square {
+            margin-top: 10%;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: relative;
+            animation: move-right 3s linear infinite;
+        }
+
+        @keyframes move-right {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: calc(100vw - 50px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="inner-container">
+            <div class="dark-green-container">
+                <div class="light-green-square"></div>
+            </div>
+            <div class="dark-green-container">
+                
+            </div>
+            <div class="dark-green-container" id="right">
+                <div class="light-green-container"></div>
+                <div class="light-green-container">
+                    <div class="yellow-box"></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="square"></div>
+</body>
+
+</html>

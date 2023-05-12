@@ -132,8 +132,7 @@ class Program
                         {
                             dep--;
                             Console.WriteLine("Введите номер сотрудника ");
-                            if (int.TryParse(Console.ReadLine(), out int number)) { }
-                            else break;
+                            if (!int.TryParse(Console.ReadLine(), out int number)) { break; }
                             flag = department.AddNewWorker(dep, number);
                             if (flag)
                             {
@@ -159,8 +158,7 @@ class Program
                         {
                             dep--;
                             Console.WriteLine("Введите номер сотрудника ");
-                            if (int.TryParse(Console.ReadLine(), out int number)) { }
-                            else break;
+                            if (!int.TryParse(Console.ReadLine(), out int number)) { break; }
                             flag = department.DismissEmployee(dep, number);
                             if (flag)
                             {

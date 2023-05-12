@@ -1,0 +1,23 @@
+body {
+    font-family: arial;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 700px; /* макс ширина */
+    margin: 0 auto; /* выровняем по центру */
+}
+
+.item {
+    flex: 1 1 calc(33.33% - 30px); /* отнимем margin и скажем растягиваться */
+    margin: 5px;
+    box-sizing: border-box; /* чтобы внутренний отступ не влиял когда там будет текст... */
+    min-width: 170px; /* мин. ширина блока, чтобы переносились на другой ряд */
+
+    padding: 50px 20px;
+    font-size: 400%;
+    text-align: center;
+    background: #b5ced8; /* для красоты */
+}

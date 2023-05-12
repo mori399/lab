@@ -240,9 +240,10 @@ namespace lab1
             return true;
 
         }
-        public void ShowOperators(Department depart)
+        public void ShowOperators(Department department)
         {
             bool menu = true;
+            int dep;
             while (menu)
             {
                 Workers workers = new Workers();
@@ -250,11 +251,12 @@ namespace lab1
                     "1 - оператор +\n" +
                     "2 - оператор ++\n" +
                     "3 - оператор ==\n" +
-                    "4 - оператор <\n" +
-                    "5 - оператор >\n" +
-                    "6 - оператор <=\n" +
-                    "5 - оператор >=\n" +
-                    "5 - оператор !=\n");
+                    "4 - оператор !=\n" +
+                    "5 - оператор <\n" +
+                    "6 - оператор >\n" +
+                    "7 - оператор <=\n" +
+                    "8 - оператор >=\n" +
+                    "-1 - чтобы выйти\n");
 
                 int.TryParse(Console.ReadLine(), out int n);
                 switch (n)
@@ -262,16 +264,164 @@ namespace lab1
 
                     case 1:
                         workers.NewEployment();
-                        depart += new Workers(workers);
+                        department += new Workers(workers);
                         break;
                     case 2:
-                        depart++;
+                        department++;
                         break;
                     case 3:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2)) {
+                                    if (depart[dep][number1] == depart[dep][number2]) {
+                                        Console.WriteLine("Они равны ");
+                                    }
+                                    else Console.WriteLine("Они не равны "); 
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
 
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
                         break;
                     case 4:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] != depart[dep][number2])
+                                    {
+                                        Console.WriteLine("Они не равны ");
+                                    }
+                                    else  Console.WriteLine("Они равны ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
 
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
+                        break;
+                    case 5:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] < depart[dep][number2])
+                                    {
+                                        Console.WriteLine("Первый меньше второго ");
+                                    }
+                                    else Console.WriteLine("Первый не меньше второго ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
+
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
+                        break;
+                    case 6:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] > depart[dep][number2])
+                                    {
+                                        Console.WriteLine("Первый больше второго ");
+                                    }
+                                    else Console.WriteLine("Первый не больше второго ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
+
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
+                        break;
+                    case 7:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] <= depart[dep][number2])
+                                    {
+                                        Console.WriteLine("Первый меньше или равен второму ");
+                                    }
+                                    else Console.WriteLine("Первый не меньше или равен второму ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
+
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
+                        break;
+                    case 8:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] >= depart[dep][number2])
+                                    {
+                                        Console.WriteLine("Первый больше или равен второму");
+                                    }
+                                    else Console.WriteLine("Первый не больше или равен второму ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
+
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
                         break;
                     case -1:
                         menu = false;

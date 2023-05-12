@@ -39,6 +39,57 @@ namespace lab1
             Console.WriteLine("Вызван деструктор");
            
         }
+        public static bool operator ==(Human human1, Human human2)
+        {
+            if (human1.GetName() == human2.GetName() &&
+                human1.Getbirthday() == human2.Getbirthday() &&
+                human1.GetStartYear() == human2.GetStartYear() &&
+                human1.GetSurename() == human2.GetSurename() &&
+                human1.GetSurename() == human2.GetSurename())
+                return true;
+            else
+                return false;
+        }
+        public static bool operator !=(Human human1, Human human2)
+        {
+            if (human1.GetName() == human2.GetName() &&
+                human1.Getbirthday() == human2.Getbirthday() &&
+                human1.GetStartYear() == human2.GetStartYear() &&
+                human1.GetSurename() == human2.GetSurename() &&
+                human1.GetSurename() == human2.GetSurename())
+                return false;
+            else
+                return true;
+        }
+        public static bool operator >(Human human1, Human human2)
+        {
+            if (human1.GetStartYear() > human2.GetStartYear())
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator <(Human human1, Human human2)
+        {
+            if (human1.GetStartYear() < human2.GetStartYear()) return true;
+            else return false;
+        }
+
+        public static bool operator >=(Human human1, Human human2)
+        {
+            if (human1.GetStartYear() >= human2.GetStartYear())
+                return true;
+            else
+                return false;
+        }
+
+        public static bool operator <=(Human human1, Human human2)
+        {
+            if (human1.GetStartYear() <= human2.GetStartYear())
+                return true;
+            else
+                return false;
+        }
 
         public string GetName()
         {

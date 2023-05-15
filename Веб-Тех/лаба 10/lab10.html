@@ -4,7 +4,7 @@
 <head>
     <title>Flexbox structure</title>
     <style>
-        .container {
+         .container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -15,9 +15,14 @@
 
         .inner-container {
             display: flex;
+            height: 90%;
+            width: 90%;
+            background-color: blue;
+        }
+
+        .inner2-container {
+            display: flex;
             flex-direction:column-reverse;
-            justify-content: center;
-            align-items: center;
             height: 90%;
             width: 90%;
             background-color: blue;
@@ -25,57 +30,49 @@
 
         .dark-green-container {
             display: flex;
-            height: 25%;
-            width: 30%;
-            margin-top: 10px;
+            height: 90%;
+            width: 85%;  
+            flex-direction:column-reverse;
+            margin-top: 20px;
             margin-bottom: 10px;
+            margin-right: 10px;
+            margin-left: 10px;
             background-color: darkgreen;
         }
 
-        .dark-green-container#right {
-            justify-content: right;
-            align-items: right;
+        .dark-green2-container {
+            display: flex;
+            height: 90%;
+            width: 85%;
+            flex-direction:column-reverse;
+            margin-top: 20px;
+            margin-bottom: -15px;
+            margin-left: 10px;
+            background-color: darkgreen;
         }
 
         .light-green-square {
-            height: 85%;
-            width: 30%;
-            text-align: right;
+            height: 15%;
+            width: 95%;
             margin: 2%;
+            margin-bottom: 330px;
             background-color: lightgreen;
         }
 
         .light-green-container {
             display: flex;
             justify-content: center;
-            align-items: center;
             height: 85%;
-            width: 25%;
-            margin: 2%;
+            width: 85%;
+            margin: 6%;
             background-color: lightgreen;
         }
 
-        .light-green-container#yellow {
-            justify-content: left;
-            height: 80%;
-            width: 100%;
-        }
-
         .yellow-box {
-            height: 80%;
+            height: 40%;
             width: 80%;
+            margin-top: 5px;
             background-color: yellow;
-        }
-
-        .yellow-box#left {
-            width: 40%;
-            margin-left: 2%;
-        }
-
-        .yellow-box#right {
-            width: 30%;
-            text-align: right;
-            margin: 10px;
         }
 
         .square {
@@ -105,16 +102,16 @@
             <div class="dark-green-container">
                 <div class="light-green-square"></div>
             </div>
-            <div class="dark-green-container">
-                
-            </div>
-            <div class="dark-green-container" id="right">
+            <div class="inner2-container">
+            <div class="dark-green2-container">
                 <div class="light-green-container"></div>
                 <div class="light-green-container">
                     <div class="yellow-box"></div>
                 </div>
             </div>
-            
+            <div class="dark-green2-container" id="right">
+            </div>
+        </div>
         </div>
     </div>
     

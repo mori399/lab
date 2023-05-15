@@ -1,0 +1,57 @@
+<html>
+<head>
+  
+</head>
+<body>
+
+</body>
+</html>
+
+<script language="JavaScript">
+function iterateArray(arr) {
+    arr.forEach((item, index) => {
+      if (item === 8) {
+        console.error(`Элемент: ${item}`);
+      } else {
+        console.log(`Элемент: ${item}`);
+      }
+    });
+  }
+
+
+  function promptString() 
+  {
+    let userInput = prompt("Введите 'Дата':");
+    while (userInput !== "Дата") {
+    console.log(userInput);
+    userInput = prompt(`Ты должно быть не понял, введите 'Дата'. Это не правильно: ${userInput}`);
+  }
+  console.log(new Date());
+}
+
+
+function printArrayElements() {
+    var N = prompt("Ввеидте число: ");
+      const arr = [];
+      for (let i = 0; i < N; i++) { 			
+        arr.push(i);
+      }
+      
+      for (let i = 0; i < N; i++) { 			
+        arr.push(i);
+
+        setTimeout(
+          () => { console.log(`Элемент: ${arr[i]}`); }, 
+          (i + 1 ) * 3000);
+      }
+    }
+
+</script>
+  
+<input type="button" value="задание один" onClick="iterateArray([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14])">
+
+<input type="button" value="задание два" onClick="promptString()">
+
+<input type="button" value="задание три" onClick="printArrayElements()">
+</body>
+</html>

@@ -1,2 +1,0 @@
-Get-Service | Where StartType -eq "Automatic" | Format-List -Property Name, PathName, Description, ServiceType |  Out-File -FilePath .\result.txt
-Get-CimInstance -ClassName Win32_SystemProcesses | Format-List -Property GroupComponent, PartComponent |  Out-File -FilePath .\Ident.txt

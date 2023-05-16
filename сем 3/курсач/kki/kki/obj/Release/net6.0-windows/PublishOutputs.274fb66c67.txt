@@ -1,5 +1,0 @@
-C:\Users\morim\Desktop\Для\kki.exe
-C:\Users\morim\Desktop\Для\kki.dll
-C:\Users\morim\Desktop\Для\kki.deps.json
-C:\Users\morim\Desktop\Для\kki.runtimeconfig.json
-C:\Users\morim\Desktop\Для\kki.pdb

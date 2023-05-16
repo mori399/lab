@@ -1,9 +1,0 @@
-D:\OS\LAB
-source.txt
-
-D:\OS\lab1.1\lab1.1\bin\Debug\net6.0\lab1.1.exe
-
-D:\OS\lab1.2\lab1.2\bin\Debug\net6.0\lab1.2.exe
-
-cd/d D:\OS\LAB
-help > help.txt

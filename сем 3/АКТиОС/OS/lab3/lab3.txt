@@ -1,3 +1,0 @@
-Get-Service | Where-Object {$_.Status -EQ "Running"}
-Get-Service | Where-Object {$_.Status -EQ "Stopped"}
-Get-Service spooler | Select-Object *

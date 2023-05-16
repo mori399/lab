@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            p{
+                text-align: center;
+            }
+            
+            div{
+                text-align: center;
+            }
+
+            .selected{
+                background-color: brown;
+            }
+
+           .checkbox{
+            margin-left: 49px;
+           }
+            .contener{
+                padding: 0 16px;
+                padding-top: 5px;
+                border-radius: 2px;
+                background: 0 0;
+                border: none;
+                outline: none;
+                font-family: "Consolas", "Helvetica", "Arial", sans-serif;
+                color: #ff0000;
+                text-transform: uppercase;
+                font-size: 14px;
+                will-change: box-shadow;
+                transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+                cursor: pointer;
+            }
+        </style>
+        <script>
+            function AddDo(){
+                arr.push(document.getElementById('task').value);
+                Print();
+            }
+            function Print(){
+                for(i=0;i<arr.length + 1;i++){
+                    document.getElementById('' + (i+1) + '').textContent = "";
+                    document.getElementById('div' + (i+1) + '').style.display = "none";
+                }
+                for(i = 0; i<arr.length; i++){
+                    document.getElementById('' + (i+1) + '').textContent = arr[i];
+                    document.getElementById('div' + (i+1) + '').style.display = "block";
+                }
+            }
+            function select(int){
+                document.getElementById(int).toggleAttribute(".selected");
+            }
+
+    function toggleSelect(id) {
+        document.getElementById(id).style.color = "green";
+    }
+
+    function singleSelect(div) {
+      let selected = div.querySelectorAll('.selected');
+      for(let elem of selected) {
+        elem.classList.remove('selected');
+      }
+      div.classList.add('selected');
+    }
+    function DeleteTask(i){
+        arr.splice(i-1, 1);
+        document.getElementById('div' + (i) + '').style.display = "none";
+        Print();
+    }
+
+    </script>
+    </head>
+    <body>
+        <script>
+            var arr = [];
+        </script>
+        <p>Список дел</p>
+        <form onSubmit = "AddDo(); return false;" id = "form">
+            <div>
+                <label for="task">Введите дело: </label>
+                <input name="task" id="task" required>
+                <input type="submit" value="Add">
+              </div>
+
+            <div id = "div1" style = "display: none; justify-content: space-between;">
+                <p id = "1" name = "1" style = "margin: 0;"></p>
+                <input name = "b1" type = "checkbox" onclick="toggleSelect('1')" value = "выполнить" class=" checkbox">
+                <input name = "b1"  type = "button" onclick="DeleteTask(1)" value = "удалить">
+            </div>
+
+            <div id = "div2" style = "display: none;">
+                <p id = "2" name = "2"></p>
+                <input name = "b2" type = "checkbox" onclick="toggleSelect('2')" value = "выполнить" class=" checkbox">
+                <input name = "b2"  type = "button" onclick="DeleteTask(2)" value = "удалить">
+            </div>
+
+            <div id = "div3" style = "display: none;">
+                <p id = "3" name = "3"></p>
+                <input name = "b3" type = "checkbox" onclick="toggleSelect('3')" value = "выполнить" class=" checkbox">
+                <input name = "b3"  type = "button" onclick="DeleteTask(3)" value = "удалить">
+            </div>
+
+            <div id = "div4" style = "display: none;">
+                <p id = "4" name = "4"></p>
+                <input name = "b4" type = "checkbox" onclick="toggleSelect('4')" value = "выполнить" class=" checkbox">
+                <input name = "b4"  type = "button" onclick="DeleteTask(4)" value = "удалить">
+            </div>
+
+            <div id = "div5" style = "display: none;">
+                <p id = "5" name = "5"></p>
+                <input name = "b5" type = "checkbox" onclick="toggleSelect('5')" value = "выполнить" class=" checkbox">
+                <input name = "b5"  type = "button" onclick="DeleteTask(5)" value = "удалить">
+            </div>
+
+            <div id = "div6" style = "display: none; justify-content: space-between;">
+                <p id = "6" name = "6" style = "margin: 0;"></p>
+                <input name = "b6" type = "checkbox" onclick="toggleSelect('6')" value = "выполнить" class=" checkbox">
+                <input name = "b6"  type = "button" onclick="DeleteTask(6)" value ="удалить">
+            </div>
+
+            <div id = "div7" style = "display: none;">
+                <p id = "7" name = "7"></p>
+                <input name = "b2" type = "checkbox" onclick="toggleSelect('7')" value = "выполнить" class=" checkbox">
+                <input name = "b2"  type = "button" onclick="DeleteTask(7)" value = "удалить">
+            </div>
+
+            <div id = "div8" style = "display: none;">
+                <p id = "8" name = "8"></p>
+                <input name = "b3" type = "checkbox" onclick="toggleSelect('8')" value = "выполнить" class=" checkbox">
+                <input name = "b3"  type = "button" onclick="DeleteTask(8)" value = "удалить">
+            </div>
+
+            <div id = "div9" style = "display: none;">
+                <p id = "9" name = "9"></p>
+                <input name = "b4" type = "checkbox" onclick="toggleSelect('9')" value = "выполнить" class=" checkbox">
+                <input name = "b4"  type = "button" onclick="DeleteTask(9)" value = "удалить">
+            </div>
+
+            <div id = "div10" style = "display: none;">
+                <p id = "10" name = "10"></p>
+                <input name = "b5" type = "checkbox" onclick="toggleSelect('10')" value = "выполнить" class=" checkbox">
+                <input name = "b5"  type = "button" onclick="DeleteTask(10)" value = "удалить">
+            </div>
+
+        </form>
+    </body>
+</html>

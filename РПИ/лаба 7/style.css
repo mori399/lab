@@ -1,0 +1,428 @@
+fig{
+position: absolute;
+width: 1015px;
+height: 136px;
+left: 0px;
+top: 0px;
+
+background: #64617F;}
+
+qe{
+    position: absolute;
+width: 179.85px;
+height: 101.78px;
+left: 39px;
+top: 0.19px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 125px;
+
+color: #FFFFFF;
+
+transform: rotate(-0.06deg);
+}
+
+w{
+    position: absolute;
+width: 257px;
+height: 42px;
+left: 711px;
+top: 47px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 42px;
+
+color: #FFFFFF;
+}
+
+square1{
+position: absolute;
+width: 1015px;
+height: 721px;
+left: 0px;
+top: 136px;
+z-index: 1;
+background: rgba(85, 208, 241, 0.54);
+}
+
+square2{
+position: absolute;
+width: 416px;
+height: 476px;
+left: 563px;
+top: 204px;
+z-index: 1;
+
+background: #64617F;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+square3{
+position: absolute;
+width: 1015px;
+height: 230px;
+left: 0px;
+top: 857px;
+
+background: #64617F;
+}
+
+text1{
+position: absolute;
+width: 446px;
+height: 183px;
+left: 58px;
+top: 238px;
+z-index: 1;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 62px;
+
+color: #fffefe;
+
+}
+
+text2{
+position: absolute;
+width: 321px;
+height: 39px;
+left: 611px;
+top: 238px;
+z-index: 1;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 42px;
+
+color: #FFFFFF;
+}
+
+text3{
+
+position: absolute;
+width: 410px;
+height: 28px;
+left: 620px;
+top: 285px;
+z-index: 1;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 17px;
+
+color: #FFFFFF;
+}
+
+text4{
+position: absolute;
+width: 406px;
+height: 185px;
+left: 58px;
+top: 457px;
+z-index: 1;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+
+color: #FFFFFF;
+}
+
+pic{
+position: absolute;
+width: 1015px;
+height: 721px;
+left: 0px;
+top: 136px;
+z-index: 0;
+
+background: url(global-network-concept-europe-14586659.jpg);
+background-size: cover;
+transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+text5{
+    /* Минимум рисков при доставке: */
+
+
+position: absolute;
+width: 180px;
+height: 39px;
+left: 44px;
+top: 902px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+text6{
+    /* ваш груз будет застрахован */
+
+
+position: absolute;
+width: 152px;
+height: 28px;
+left: 58px;
+top: 972px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+text7{
+    /* Снижение расходов: */
+position: absolute;
+width: 180px;
+height: 39px;
+left: 284px;
+top: 904px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+text8{
+    /* отсутствует доплата за простой транспорта, защита от доначислений платежей */
+
+
+position: absolute;
+width: 221px;
+height: 61px;
+left: 263px;
+top: 963px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+text-align: center;
+
+color: #FFFFFF;
+}
+text9{
+/* Сокращение трудозатрат: */
+
+
+position: absolute;
+width: 180px;
+height: 39px;
+left: 539px;
+top: 904px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+text10{
+    /* удаленное оформление документов и электронное декларирование */
+
+
+position: absolute;
+width: 230px;
+height: 68px;
+left: 514px;
+top: 966px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+text11{
+    /* Экономия времени: */
+
+
+position: absolute;
+width: 180px;
+height: 39px;
+left: 777px;
+top: 904px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+}
+
+text12{
+ /* по вопросам доставки, таможенных и складских услуг вы работаете с одним консультантом */
+
+
+position: absolute;
+width: 209px;
+height: 89px;
+left: 765px;
+top: 959px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+pic1{
+position: absolute;
+width: 77px;
+height: 86px;
+left: 95px;
+top: 815px;
+z-index: 1;
+
+background: url(shield.png);
+}
+
+pic2{
+position: absolute;
+width: 95px;
+height: 74px;
+left: 336px;
+top: 818px;
+z-index: 1;
+
+background: url(pig.png);
+}
+
+pic3{
+position: absolute;
+width: 67px;
+height: 62px;
+left: 595px;
+top: 830px;
+z-index: 1;
+
+background: url(pc.png);
+}
+
+pic4{
+position: absolute;
+width: 81px;
+height: 79px;
+left: 826px;
+top: 818px;
+z-index: 1;
+
+background: url(man.png);
+}
+
+.label1{
+position: absolute;
+width: 321px;
+height: 57px;
+left: 611px;
+top: 330px;
+z-index: 2;
+background: #FFFFFF;
+}
+
+.label2{
+position: absolute;
+width: 321px;
+height: 57px;
+left: 611px;
+top: 404px;
+z-index: 2;
+
+background: #FFFFFF;
+}
+
+.label3{
+    position: absolute;
+    width: 321px;
+    height: 57px;
+    left: 611px;
+    top: 478px;
+    z-index: 2;
+
+    background: #FFFFFF;
+}
+
+.button{
+    position: absolute;
+width: 321px;
+height: 83px;
+left: 611px;
+top: 559px;
+z-index: 2;
+
+background: #F8B200;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+text13{
+    position: absolute;
+width: 393px;
+height: 48px;
+left: 644px;
+top: 583px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+z-index: 3;
+color: #000000;
+
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

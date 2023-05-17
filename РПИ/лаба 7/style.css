@@ -1,6 +1,6 @@
 fig{
 position: absolute;
-width: 1015px;
+width: 1481px;
 height: 136px;
 left: 0px;
 top: 0px;
@@ -9,28 +9,26 @@ background: #64617F;}
 
 qe{
     position: absolute;
-width: 179.85px;
-height: 101.78px;
-left: 39px;
-top: 0.19px;
-
-font-family: 'Chakra Petch';
-font-style: normal;
-font-weight: 400;
-font-size: 96px;
-line-height: 125px;
-
-color: #FFFFFF;
-
-transform: rotate(-0.06deg);
+    width: 179.85px;
+    height: 101.78px;
+    left: 284px;
+    top: 0.19px;
+    
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 96px;
+    line-height: 125px;
+    
+    color: #FFFFFF;
 }
 
 w{
-    position: absolute;
+position: absolute;
 width: 257px;
 height: 42px;
-left: 711px;
-top: 47px;
+left: 1006px;
+top: 49px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -42,21 +40,21 @@ color: #FFFFFF;
 }
 
 square1{
-position: absolute;
-width: 1015px;
-height: 721px;
-left: 0px;
-top: 136px;
-z-index: 1;
-background: rgba(85, 208, 241, 0.54);
-}
+    position: absolute;
+    width: 1481px;
+    height: 722px;
+    left: 0px;
+    top: 136px;
+    z-index: 1;
+    background: rgba(85, 208, 241, 0.54);
+    }
 
 square2{
-position: absolute;
-width: 416px;
-height: 476px;
-left: 563px;
-top: 204px;
+    position: absolute;
+    width: 416px;
+    height: 476px;
+    left: 824px;
+top: 243px;
 z-index: 1;
 
 background: #64617F;
@@ -64,39 +62,40 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 square3{
-position: absolute;
-width: 1015px;
-height: 230px;
-left: 0px;
-top: 857px;
+    position: absolute;
+    width: 1481px;
+    height: 230px;
+    left: 0px;
+    top: 856px;
 
 background: #64617F;
 }
 
 text1{
-position: absolute;
-width: 446px;
-height: 183px;
-left: 58px;
-top: 238px;
+    position: absolute;
+    width: 446px;
+    height: 183px;
+    left: 336px;
+    top: 265px;
+    
+    font-family: 'Chakra Petch';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 62px;
+    
 z-index: 1;
 
-font-family: 'Chakra Petch';
-font-style: normal;
-font-weight: 400;
-font-size: 48px;
-line-height: 62px;
 
 color: #fffefe;
-
 }
 
 text2{
 position: absolute;
 width: 321px;
 height: 39px;
-left: 611px;
-top: 238px;
+left: 872px;
+top: 265px;
 z-index: 1;
 
 font-family: 'Chakra Petch';
@@ -109,12 +108,11 @@ color: #FFFFFF;
 }
 
 text3{
-
-position: absolute;
-width: 410px;
-height: 28px;
-left: 620px;
-top: 285px;
+    position: absolute;
+    width: 360px;
+    height: 28px;
+    left: 863px;
+    top: 313px;
 z-index: 1;
 
 font-family: 'Chakra Petch';
@@ -127,11 +125,11 @@ color: #FFFFFF;
 }
 
 text4{
-position: absolute;
-width: 406px;
-height: 185px;
-left: 58px;
-top: 457px;
+    position: absolute;
+    width: 406px;
+    height: 185px;
+    left: 335px;
+    top: 496px;
 z-index: 1;
 
 font-family: 'Chakra Petch';
@@ -144,27 +142,25 @@ color: #FFFFFF;
 }
 
 pic{
-position: absolute;
-width: 1015px;
-height: 721px;
-left: 0px;
-top: 136px;
-z-index: 0;
-
-background: url(global-network-concept-europe-14586659.jpg);
-background-size: cover;
-transform: matrix(-1, 0, 0, 1, 0, 0);
-}
+    position: absolute;
+    width: 1481px;
+    height: 722px;
+    left: 0px;
+    top: 136px;
+    z-index: 0;
+    
+    background: url(global-network-concept-europe-14586659.jpg);
+    background-size: cover;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
 
 text5{
     /* Минимум рисков при доставке: */
-
-
-position: absolute;
-width: 180px;
-height: 39px;
-left: 44px;
-top: 902px;
+    position: absolute;
+    width: 180px;
+    height: 39px;
+    left: 221px;
+    top: 903px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -174,19 +170,15 @@ line-height: 26px;
 text-align: center;
 
 color: #FFFFFF;
-
-
 }
 
 text6{
     /* ваш груз будет застрахован */
-
-
-position: absolute;
-width: 152px;
-height: 28px;
-left: 58px;
-top: 972px;
+    position: absolute;
+    width: 152px;
+    height: 28px;
+    left: 235px;
+    top: 973px;    
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -200,11 +192,11 @@ color: #FFFFFF;
 
 text7{
     /* Снижение расходов: */
-position: absolute;
-width: 180px;
-height: 39px;
-left: 284px;
-top: 904px;
+    position: absolute;
+    width: 180px;
+    height: 39px;
+    left: 495px;
+    top: 902px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -222,11 +214,11 @@ text8{
     /* отсутствует доплата за простой транспорта, защита от доначислений платежей */
 
 
-position: absolute;
-width: 221px;
-height: 61px;
-left: 263px;
-top: 963px;
+    position: absolute;
+    width: 221px;
+    height: 61px;
+    left: 474px;
+    top: 968px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -244,8 +236,8 @@ text9{
 position: absolute;
 width: 180px;
 height: 39px;
-left: 539px;
-top: 904px;
+left: 802px;
+top: 902px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -263,11 +255,11 @@ text10{
     /* удаленное оформление документов и электронное декларирование */
 
 
-position: absolute;
-width: 230px;
-height: 68px;
-left: 514px;
-top: 966px;
+    position: absolute;
+    width: 230px;
+    height: 68px;
+    left: 782px;
+    top: 969px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -282,12 +274,11 @@ color: #FFFFFF;
 text11{
     /* Экономия времени: */
 
-
-position: absolute;
-width: 180px;
-height: 39px;
-left: 777px;
-top: 904px;
+    position: absolute;
+    width: 180px;
+    height: 39px;
+    left: 1090px;
+    top: 902px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -304,12 +295,11 @@ color: #FFFFFF;
 text12{
  /* по вопросам доставки, таможенных и складских услуг вы работаете с одним консультантом */
 
-
-position: absolute;
-width: 209px;
-height: 89px;
-left: 765px;
-top: 959px;
+ position: absolute;
+ width: 209px;
+ height: 89px;
+ left: 1075px;
+ top: 958px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -322,65 +312,67 @@ color: #FFFFFF;
 }
 
 pic1{
-position: absolute;
-width: 77px;
-height: 86px;
-left: 95px;
-top: 815px;
+    position: absolute;
+    width: 77px;
+    height: 86px;
+    left: 272px;
+    top: 812px;
 z-index: 1;
 
 background: url(shield.png);
 }
 
 pic2{
-position: absolute;
-width: 95px;
-height: 74px;
-left: 336px;
-top: 818px;
+    position: absolute;
+    width: 95px;
+    height: 74px;
+    left: 538px;
+    top: 818px;
+    
 z-index: 1;
 
 background: url(pig.png);
 }
 
 pic3{
-position: absolute;
-width: 67px;
-height: 62px;
-left: 595px;
-top: 830px;
+    position: absolute;
+    width: 67px;
+    height: 62px;
+    left: 862px;
+    top: 825px;
 z-index: 1;
 
 background: url(pc.png);
 }
 
 pic4{
-position: absolute;
-width: 81px;
-height: 79px;
-left: 826px;
-top: 818px;
+    position: absolute;
+    width: 81px;
+    height: 79px;
+    left: 1140px;
+    top: 812px;
 z-index: 1;
 
 background: url(man.png);
 }
 
 .label1{
-position: absolute;
-width: 321px;
-height: 57px;
-left: 611px;
-top: 330px;
+    position: absolute;
+    width: 321px;
+    height: 57px;
+    left: 871px;
+    top: 347px;
 z-index: 2;
 background: #FFFFFF;
 }
 
 .label2{
-position: absolute;
-width: 321px;
-height: 57px;
-left: 611px;
-top: 404px;
+    position: absolute;
+    width: 321px;
+    height: 57px;
+    left: 872px;
+    top: 427px;
+    
 z-index: 2;
 
 background: #FFFFFF;
@@ -390,8 +382,8 @@ background: #FFFFFF;
     position: absolute;
     width: 321px;
     height: 57px;
-    left: 611px;
-    top: 478px;
+    left: 872px;
+    top: 507px;
     z-index: 2;
 
     background: #FFFFFF;
@@ -399,10 +391,10 @@ background: #FFFFFF;
 
 .button{
     position: absolute;
-width: 321px;
-height: 83px;
-left: 611px;
-top: 559px;
+    width: 321px;
+    height: 83px;
+    left: 870px;
+    top: 598px;
 z-index: 2;
 
 background: #F8B200;
@@ -411,10 +403,10 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 text13{
     position: absolute;
-width: 393px;
-height: 48px;
-left: 644px;
-top: 583px;
+    width: 393px;
+    height: 48px;
+    left: 887px;
+    top: 622px;
 
 font-family: 'Chakra Petch';
 font-style: normal;
@@ -426,3 +418,200 @@ color: #000000;
 
 text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+
+square4{
+    position: absolute;
+    width: 1481px;
+    height: 385px;
+    left: 0px;
+    top: 1086px;
+z-index: 0;
+
+background: #55D0F1;
+    }
+
+square5{
+    position: absolute;
+    width: 1481px;
+    height: 263px;
+    left: 0px;
+    top: 2145px;
+z-index: 0;
+
+background: #64617F;
+}
+
+pic5{
+    position: absolute;
+    width: 271px;
+    height: 278px;
+    left: 391px;
+    top: 1140px;
+    
+    z-index: 1;
+
+    background: url(all.png);
+}
+
+pic6{
+    position: absolute;
+    width: 185px;
+    height: 184px;
+    left: 333px;
+    top: 1605px;
+    
+
+background: url(man1.png);
+}
+
+pic7{
+    position: absolute;
+    width: 185px;
+    height: 184px;
+    left: 333px;
+    top: 1854px;
+
+background: url(man2.png);
+}
+
+text14{
+    position: absolute;
+    width: 453px;
+    height: 228px;
+    left: 777px;
+    top: 1165px;    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 27px;
+line-height: 35px;
+text-align: center;
+z-index: 1;
+
+color: #FFFFFF;
+}
+
+text15{
+    position: absolute;
+    width: 918px;
+    height: 36px;
+    left: 300px;
+    top: 1504px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 62px;
+text-align: center;
+
+color: #000000;
+}
+
+text16{
+    position: absolute;
+    width: 729px;
+    height: 113px;
+    left: 547px;
+    top: 1626px;
+    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+
+color: #000000;
+}
+
+text17{
+    position: absolute;
+    width: 729px;
+    height: 178px;
+    left: 555px;
+    top: 1854px;    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+
+color: #000000;
+}
+
+text18{
+    position: absolute;
+    width: 186.89px;
+    height: 101.01px;
+    left: 273px;
+    top: 2145.2px;
+    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 125px;
+z-index: 1;
+
+color: #FFFFFF;
+}
+
+text19{
+    position: absolute;
+    width: 482px;
+    height: 39px;
+    left: 759px;
+    top: 2185px;
+    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 22px;
+line-height: 29px;
+text-align: right;
+z-index: 1;
+
+color: #FFFFFF;
+}
+
+text20{
+    position: absolute;
+    width: 384px;
+    height: 39px;
+    left: 273px;
+    top: 2273px;
+    
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 26px;
+z-index: 1;
+
+color: #FFFFFF;
+}
+
+text21{
+    position: absolute;
+    width: 257px;
+    height: 42px;
+    left: 1020px;
+    top: 2273px;
+
+font-family: 'Chakra Petch';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 42px;
+z-index: 1;
+
+
+color: #FFFFFF;
+}
+

@@ -1,11 +1,4 @@
-﻿using lab1;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace lab1
 {
     class Template<T>
@@ -66,7 +59,7 @@ namespace lab1
                                 "4 - Вывести минимальные элементы массива\n" +
                                 "5 - Вывести максимальные элементы массива\n" +
                                 "6 - Отсортировать массив\n" +
-                                "7 - Вывести массивы" +
+                                "7 - Вывести массивы\n" +
                                 "8 - выход");
 
                 if (int.TryParse(Console.ReadLine(), out int templateChoise))

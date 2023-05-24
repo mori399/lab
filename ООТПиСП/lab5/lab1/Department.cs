@@ -247,8 +247,6 @@ namespace lab1
                 Console.WriteLine("Какой оператор используем?\n" +
                     "1 - оператор +\n" +
                     "2 - оператор ++\n" +
-                    // human1 == human2 : true
-                    // h1 != h2 : false
                     "3 - оператор ==\n" +
                     "4 - оператор !=\n" +
                     "5 - оператор <\n" +
@@ -439,15 +437,15 @@ namespace lab1
                                     bool check = depart[dep][number1] == depart[dep][number2];
                                     Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                     check = depart[dep][number1] != depart[dep][number2];
-                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} != human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                     check = depart[dep][number1] < depart[dep][number2];
-                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} < human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                     check = depart[dep][number1] > depart[dep][number2];
-                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} > human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                     check = depart[dep][number1] <= depart[dep][number2];
-                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} <= human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                     check = depart[dep][number1] >= depart[dep][number2];
-                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} >= human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                 }
                                 else Console.WriteLine("Сотрудников с такими номерами нет ");
                                 break;

@@ -19,7 +19,8 @@ class Program
                 "4 - Редактировать сотрудника\n" +
                 "5 - Выдать сотруднику работу\n" +
                 "6 - Уволить сотрудника\n" +
-                "7 - Демонстарция операторов\n");
+                "7 - Демонстарция операторов\n" +
+                "8 - Шаблоны\n");
 
             int.TryParse(Console.ReadLine(), out int n);
             switch (n)
@@ -179,6 +180,50 @@ class Program
                 case 7:
                     Console.Clear();
                     department.ShowOperators(department);
+                    break;
+                case 8:
+                    Template<int> intArr = new Template<int>(5);
+
+                    Console.WriteLine("Введите числа");
+                    for (int i = 0; i < intArr.GetArrayLength(); i++)
+                    {
+                        int.TryParse(Console.ReadLine(),out int number);
+                        intArr.SetByIndex(i, number);
+                    }
+
+                    Template<char> charArr = new Template<char>(5);
+
+                    Console.WriteLine("Введите символ");
+                    for (int i = 0; i < charArr.GetArrayLength(); i++)
+                    {
+                        char.TryParse(Console.ReadLine(), out char symbol);
+                        charArr.SetByIndex(i, symbol);
+                    }
+
+                    Template<Workers> workersArr = new Template<Workers>(5);
+
+                    for (int i = 0; i < workersArr.GetArrayLength(); i++)
+                    {
+                        int startdate = 2000;
+                        startdate += i;
+                        DateTime birthday = new DateTime(1980, 1, 4);
+                        Workers worker = new Workers(startdate, "Игорь", birthday, "Цискович", "работяга");
+                        workersArr.SetByIndex(i, worker);
+                    }
+
+                    Template<Dismissed> dismissedArr = new Template<Dismissed>(5);
+
+                    for (int i = 0; i < dismissedArr.GetArrayLength(); i++)
+                    {
+                        int startdate = 2000;
+                        startdate += i;
+                        DateTime birthday = new DateTime(1980, 1, 4);
+                        DateTime dismissdate = new DateTime(2020, 12, 9);
+                        Dismissed dismiss = new Dismissed(startdate, "Кирилл", birthday, "Беляцкий", dismissdate);
+                        dismissedArr.SetByIndex(i, dismiss);
+                    }
+
+                    Template<int>.templateMenu(intArr, charArr, workersArr, dismissedArr);
                     break;
 
             }

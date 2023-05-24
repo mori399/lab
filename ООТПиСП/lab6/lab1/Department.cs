@@ -131,7 +131,6 @@ namespace lab1
             }
             if (depart[num].Count == 0) Console.WriteLine("Тут пусто\n");
         }
-
         public bool EditingEployee(int num)
         {
             int count = 0;
@@ -207,7 +206,6 @@ namespace lab1
             }
             return false;
         }
-
         public bool CheckEmployee(int dep)
         {
             if (depart[dep].Count > 0)
@@ -216,7 +214,6 @@ namespace lab1
             }
             else return false;
         }
-
         public bool AddNewWorker(int dep, int number)
         {
             if (depart[dep].Count == 0)
@@ -256,6 +253,7 @@ namespace lab1
                     "6 - оператор >\n" +
                     "7 - оператор <=\n" +
                     "8 - оператор >=\n" +
+                    "9 - показать всё\n" +
                     "-1 - чтобы выйти\n");
 
                 int.TryParse(Console.ReadLine(), out int n);
@@ -280,11 +278,13 @@ namespace lab1
                                 if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
                                 Console.WriteLine("Введите номер второго сотрудника ");
                                 if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
-                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2)) {
-                                    if (depart[dep][number1] == depart[dep][number2]) {
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    if (depart[dep][number1] == depart[dep][number2])
+                                    {
                                         Console.WriteLine("Они равны ");
                                     }
-                                    else Console.WriteLine("Они не равны "); 
+                                    else Console.WriteLine("Они не равны ");
                                 }
                                 else Console.WriteLine("Сотрудников с такими номерами нет ");
                                 break;
@@ -310,7 +310,7 @@ namespace lab1
                                     {
                                         Console.WriteLine("Они не равны ");
                                     }
-                                    else  Console.WriteLine("Они равны ");
+                                    else Console.WriteLine("Они равны ");
                                 }
                                 else Console.WriteLine("Сотрудников с такими номерами нет ");
                                 break;
@@ -415,6 +415,39 @@ namespace lab1
                                         Console.WriteLine("Первый больше или равен второму");
                                     }
                                     else Console.WriteLine("Первый не больше или равен второму ");
+                                }
+                                else Console.WriteLine("Сотрудников с такими номерами нет ");
+                                break;
+                            }
+
+                            else Console.Write("Некоректный ввод, попробуй ещё раз: ");
+                        }
+                        break;
+                    case 9:
+                        Console.WriteLine("Из какого отдела сравниваемые сотрудники?(1-3)");
+                        while (true)
+                        {
+                            if (int.TryParse(Console.ReadLine(), out dep) && CorrectImput.InRange(1, 3, dep))
+                            {
+                                dep--;
+                                Console.WriteLine("Введите номер первого сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number1)) { break; }
+                                Console.WriteLine("Введите номер второго сотрудника ");
+                                if (!int.TryParse(Console.ReadLine(), out int number2)) { break; }
+                                if (CorrectImput.InRange(0, depart[dep].Count() - 1, number1) && CorrectImput.InRange(0, depart[dep].Count() - 1, number2))
+                                {
+                                    bool check = depart[dep][number1] == depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} == human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    check = depart[dep][number1] != depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} != human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    check = depart[dep][number1] < depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} < human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    check = depart[dep][number1] > depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} > human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    check = depart[dep][number1] <= depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} <= human2 - {depart[dep][number2].GetStartYear()} :" + check);
+                                    check = depart[dep][number1] >= depart[dep][number2];
+                                    Console.WriteLine($"human1 - {depart[dep][number1].GetStartYear()} >= human2 - {depart[dep][number2].GetStartYear()} :" + check);
                                 }
                                 else Console.WriteLine("Сотрудников с такими номерами нет ");
                                 break;
